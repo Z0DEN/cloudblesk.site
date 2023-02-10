@@ -1,3 +1,1 @@
-'''
-sudo at-get update
-'''
+
