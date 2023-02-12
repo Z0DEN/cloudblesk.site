@@ -10,7 +10,7 @@
       "type": "browser-preview",
       "request": "launch",
       "name": "Browser Preview: Launch",
-      "url": "http://localhost:5501/www/cloudblesk.site/html/"
+      "url": "http://localhost:5501"
     }
   ]
 }
