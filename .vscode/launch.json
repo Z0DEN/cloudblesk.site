@@ -8,7 +8,7 @@
           "type": "browser-preview",
           "request": "launch",
           "name": "Launch site preview",
-          "url": "http://127.0.0.1:5501/www/cloudblesk.site/html/"
+          "url": "http://127.0.0.1:5502/www/cloudblesk.site/html/"
       }
   ]
 }
