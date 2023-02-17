@@ -1,10 +1,12 @@
-.main {
+.flag {
     position: relative;
+    top: 30px;
+    left: 45px;
     height: 200px;
     width: 300px;
     display: grid;
     grid-template-rows: auto auto auto;
-    border: solid 1px #000000;
+    border: solid 2px #000000;
 }
 
 .white { background-color: #ffffff; }
@@ -15,23 +17,23 @@
 .heart {
     position: relative;
     width: 200px; 
-    height: 70px;
+    height: 370px;
     }
     .heart:before, 
     .heart:after {
     content: "";
     position: absolute; 
-    left: 50px; 
-    top: 10px;
-    width: 50px; 
-    height: 80px;
+    left: 200px; 
+    top: 80px;
+    width: 200px; 
+    height: 300px;
     background: #EE4156;
-    border-radius: 50px 50px 0 0;
+    border-radius: 100px 100px 0 0;
     transform: rotate(-45deg); 
     transform-origin: 0 100%;
     }
     .heart:after {
-    left: 0;
+    left: 0px;
     transform: rotate(45deg); 
     transform-origin: 100% 100%;
     }
