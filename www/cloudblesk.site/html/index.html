@@ -1,35 +1,52 @@
 <!doctype html>
 <html>
-<head> <!-- Голова, тут прописывабтся важные данные, которые не видно на сайте, но они важны для другого кода и программ и тд-->
-      <meta charset="utf-8">
-      <meta name="author" content="Vasily">
-      <meta name="description" content="Test"><!-- Описание тоже для поисковика -->
-      <meta name="keywords" content="тест, проверка, html"><!-- Ключевые слова для поисковика-->
-      <title>Главная страница</title> <!-- Название вкладки/страницы-->
-      <link href="./styles.css" rel="stylesheet" type="text/css">
+
+<head>
+    <!-- Голова, тут прописывабтся важные данные, которые не видно на сайте, но они важны для другого кода и программ и тд-->
+    <meta charset="utf-8">
+    <meta name="author" content="Vasily">
+    <meta name="description" content="Test">
+    <!-- Описание тоже для поисковика -->
+    <meta name="keywords" content="тест, проверка, html">
+    <!-- Ключевые слова для поисковика-->
+    <title>Главная страница</title>
+    <!-- Название вкладки/страницы-->
+    <link href="./styles.css" rel="stylesheet" type="text/css">
 </head>
-      <body><!--Тут все, что видно на сайте-->
-                  <!-- Comment -->
-      Привет
-      <div class="flag">
-           <div class="white"></div>
-           <div class="blue"></div>
-           <div class="red"></div>
-      </div>
-      <div class="heart"></div>
-      <h1>Приветствие</h1> <!-- h1 чем больше тем меньше заголовок-->
-      <p>
-            Приветствую, <b>комсомол!!!</b>
-            <i>Партия рада видеть тебя</i><br> <!-- <i></i> or <em></em> делает курсивом-->
-            <strike>Большой брат следит за тобой</strike><br> <!--<strike></strike> делает текст перечеркнутым-->
-            <hr>
-            C<sub>2</sub>H<sub>3</sub>OH<sub>5</sub>NH<sub>4</sub><br><!-- <sub></sub> опускает текст вниз -->
-            <hr> <!-- Горизонтальная линия -->
-            x<sup>2</sup>y<sup>2</sup>z<sup>2</sup><br><!-- <sup></sup> поднимает текст вверх (как степень)-->
-            <!-- <br> перенос строки -->
-            <abbr title="Союз советских социалистических республик">СССР </abbr> <!-- <abbr title="расшифровка аббревиатуры">аббревиатура</abbr> -->
-      </p> <!-- Абзацы, разные ряды, <b></b> жирненьким делает, аналогично - <strong></strong> -->
-      <address>
+<script src="test.js"></script>
+
+<body>
+    <!--Тут все, что видно на сайте-->
+    <!-- Comment -->
+    Привет
+    <button type="submit" id="submit">Нажми меня</button>
+    <div class="flag">
+        <div class="white"></div>
+        <div class="blue" onclick="age()"></div>
+        <div class="red"></div>
+    </div>
+    <div class="heart"></div>
+    <h1>Приветствие</h1>
+    <!-- h1 чем больше тем меньше заголовок-->
+    <p>
+        Приветствую, <b>комсомол!!!</b>
+        <i>Партия рада видеть тебя</i><br>
+        <!-- <i></i> or <em></em> делает курсивом-->
+        <strike>Большой брат следит за тобой</strike><br>
+        <!--<strike></strike> делает текст перечеркнутым-->
+        <hr> C
+        <sub>2</sub>H<sub>3</sub>OH<sub>5</sub>NH<sub>4</sub><br>
+        <!-- <sub></sub> опускает текст вниз -->
+        <hr>
+        <!-- Горизонтальная линия -->
+        x<sup>2</sup>y<sup>2</sup>z<sup>2</sup><br>
+        <!-- <sup></sup> поднимает текст вверх (как степень)-->
+        <!-- <br> перенос строки -->
+        <abbr title="Союз советских социалистических республик">СССР </abbr>
+        <!-- <abbr title="расшифровка аббревиатуры">аббревиатура</abbr> -->
+    </p>
+    <!-- Абзацы, разные ряды, <b></b> жирненьким делает, аналогично - <strong></strong> -->
+    <address>
       СССР, <big>2</big><small>3</small> <!-- <big></big>Делает большим, <small></small> Делает маленьким -->
       </adress>
       <pre>function some() {
