@@ -1,5 +1,5 @@
 function submit() {
-    window.location.href = "/html/snake.html";
+    window.location.href = "game/snake.html";
 }
 
 function white() {
