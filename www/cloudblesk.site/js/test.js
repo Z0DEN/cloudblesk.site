@@ -20,7 +20,7 @@ function age() {
 }
 
 function redirect() {
-    window.location.href = "http://127.0.0.1:5500/www/cloudblesk.site/error_pages/500.html";
+    window.location.href = "/html/snake.html";
 }
 
 function redirect_replace() {
