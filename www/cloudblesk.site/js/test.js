@@ -1,5 +1,5 @@
 function submit() {
-    let age = alert('button is pressed');
+    window.location.href = "/html/snake.html";
 }
 
 function white() {
