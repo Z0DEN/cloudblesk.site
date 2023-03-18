@@ -1,5 +1,5 @@
 function submit() {
-    window.location.href = "http://127.0.0.1:5500/www/cloudblesk.site/html/snake.html";
+    window.location.href = "/html/snake.html";
 }
 
 function white() {
