@@ -1,0 +1,5 @@
+body {
+    height: 10000px;
+    background: linear-gradient(180deg, blueviolet, blue, powderblue);
+    background-size: cover;
+}
