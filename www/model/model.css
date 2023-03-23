@@ -20,7 +20,7 @@
 }
 
 body{
-    width: 100%;
+    width: auto;
     height: 535vh;
     background: linear-gradient(to bottom, rgb(166, 82, 245) 10%,blue 30%);
     color: var(--color-header);
