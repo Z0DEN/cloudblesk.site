@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+:root{
+    --index: calc(1vw + 1vh);
+    --color-header: #f7f2f0;
+    --color-text: #dbd8d6;
+}
+@font-face {
+    font-family: raleway-c;
+    src: url(../fonts/raleway-regular.woff2);
+}
+
+@font-face {
+    font-family: outfit-c;
+    src: url(../fonts/outfit-regular.woff2);
+}
+
+body{
+    background-color: rgb(103, 243, 253);
+}
+
+.outer{
+    padding: 10vh;
+    background-color: rgb(15, 203, 236);
+}
+
+.inner{
+    margin: auto;
+    width: 90vw;
+    height: 20vh; 
+    background-color: rgb(90, 148, 255);
+    border-radius: 7px;    
+}
+.inner-2{
+    margin-left: 60px;
+    margin-top: 20px;
+    font-size: 200%;
+}
+
+.genre{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-top: 20px;
+}
+
+.p-genre{
+    margin-left: 10px;
+}
+
+.img{
+    margin-right: 40px;
+    width: 15vw;
+    height: auto;
+    margin-bottom: 200px;
+}
+
+.h2{
+    margin-top: 1.2vh;
+    margin-right: 80px;
+}
+
+#p-gallary{
+    margin-bottom: 350px;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content:space-between;
+    height: 500px;
+    align-items: end;
+}
