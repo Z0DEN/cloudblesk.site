@@ -21,8 +21,8 @@
 
 body{
     width: 100%;
-    height: 10000px;
-    background: linear-gradient(to bottom, rgb(166, 82, 245) 1%,blue 20%);
+    height: 555vh;
+    background: linear-gradient(to bottom, rgb(166, 82, 245) 10%,blue 30%);
     color: var(--color-header);
     font-family: outfit-c;
     overflow-x: hidden;
@@ -30,7 +30,7 @@ body{
 
 #logo{
     width: calc(var(--index)*40);
-    position: absolute;
+    position: relative;
     left: 42vw;
     top: 1vh;
 }
@@ -38,15 +38,22 @@ body{
 .container{
     padding: 0 5vw;
 }
+.hero-section{
+display: flex;
+flex-direction: row;
+}
 
 .main-header{
     height: 100vh;
     font-size: calc(var(--index)*2.7);
+    display: flex;
+    flex-direction: column;
 }
 .title{
     position: relative;
-    top: 12vh;
-    left: 1.5vw;
+    top: 18vh;
+    left: -58vw;
+    width: max-content;
 }
 
 .gallery > *{
@@ -65,13 +72,20 @@ body{
 
 .text-block{
     margin-left: 6vh;
-    font-size: 150%;
+    font-size: 170%;
     flex-grow: 1;
+}
+
+.text-header{
+    color: var(--color-header);
+}
+.text-par{
+    color: var(--color-text);
 }
 
 .table{
     text-align: center;
-    font-size: calc(var(--index)*1.3);
+    font-size: 2vw;
 }
 
 table{
