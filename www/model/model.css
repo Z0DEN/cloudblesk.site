@@ -6,8 +6,8 @@
 
 :root{
     --index: calc(1vw + 1vh);
-    --color-header: #f4efec;
-    --color-text: #cdc6c3;
+    --color-header: #f7f2f0;
+    --color-text: #dbd8d6;
 }
 @font-face {
     font-family: raleway-c;
@@ -21,7 +21,7 @@
 
 body{
     width: auto;
-    height: 535vh;
+    height: 545vh;
     background: linear-gradient(to bottom, rgb(166, 82, 245) 10%,blue 30%);
     color: var(--color-header);
     font-family: outfit-c;
@@ -65,15 +65,16 @@ body{
 
 .text-block{
     margin-left: 6vh;
-    font-size: 170%;
+    font-size: 150%;
     flex-grow: 1;
 }
 
 .text-header{
-color: var(--color-header);
+    color: var(--color-header);
 }
 .text-par{
-color: var(--color-text);
+    color: var(--color-text);
+    font-size: 90%;
 }
 
 .table{
