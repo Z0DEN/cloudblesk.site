@@ -19,21 +19,20 @@
     </div>
 </header>
 
-<body>  <!-- Было бы конечно круто это на реакте реализовать, но я пока не умею. Кстати думаю можно даже при помощи библиотек js сделать SPA, но у меня нет столько времени-->
-    
+<body>  <!-- Было бы конечно круто на реакте реализовать SPA, думаю можно даже при помощи библиотек js, но у меня нет столько времени-->
     
     <div class="genre">
         <h1 class="p-genre">Популярные жанры:</h1>
-        <h2 class="h2">Боевики</h2>
-        <h2 class="h2">Мультфильмы</h2>
-        <h2 class="h2">Фантастика</h2>
+        <h2 class="h2"> <a href="action.html">Боевики</a></h2>
+        <h2 class="h2"> <a href="mult.html">Мультфильмы</a></h2>
+        <h2 class="h2"> <a href="fiction.html">Фантастика</a></h2>
     </div>
 
     <div class="gallery">
         <h1 id="p-gallary" class="p-genre">Популярные фильмы:</h1>
-        <img class="img" src="img/rambo.png" alt="Rambo">
-        <img class="img" src="img/S_park.png" alt="South_park">
-        <img class="img" src="img/doctor.jpg" alt="Doctor">
+        <img id="img-a" class="img" src="img/rambo.png" alt="Rambo" onclick="action_redirect()">
+        <img class="img" src="img/S_park.png" alt="South_park" onclick="mult_redirect()">
+        <img class="img" src="img/doctor.jpg" alt="Doctor" onclick="fiction_redirect()">
     </div>
 
 </body>

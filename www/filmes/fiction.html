@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fiction.css">
+    <script src="filmes.js"></script>
+    <title>FilmFinder</title>
+</head>
+
+<header>
+    <div class="outer">
+        <div class="inner">
+            <div class="inner-2">
+                <h1>Фантастика</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>  <!-- Было бы конечно круто на реакте реализовать SPA, думаю можно даже при помощи библиотек js, но у меня нет столько времени-->
+    
+    <div class="genre">
+        <h1 class="film">Звездные войны</h1>
+        <h1 class="film">Стартрек</h1>
+        <h1 id="mv" class="film">Доктор Кто</h1>
+        <h1 id="mv" class="film">Торчвуд</h1>
+    </div>
+
+    <div class="gallery">
+        <img class="img" src="img/star.jpg" alt="Rambo" onclick="window.location.href = 'https://ru.wikipedia.org/wiki/%D0%97%D0%B2%D1%91%D0%B7%D0%B4%D0%BD%D1%8B%D0%B5_%D0%B2%D0%BE%D0%B9%D0%BD%D1%8B'">
+        <img class="img" src="img/trek.jpg" alt="a" onclick="window.location.href =  'https://ru.wikipedia.org/wiki/%D0%97%D0%B2%D1%91%D0%B7%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BF%D1%83%D1%82%D1%8C'">
+        <img class="img" src="img/doctor.jpg" alt="a" onclick="fiction_redirect()">
+        <img class="img" src="img/torch.jpg" alt="a" onclick="window.location.href = 'https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D1%80%D1%87%D0%B2%D1%83%D0%B4'">
+    </div>
+
+</body>
+</html>

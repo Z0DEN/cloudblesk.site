@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="action.css">
+    <script src="filmes.js"></script>
+    <title>FilmFinder</title>
+</head>
+
+<header>
+    <div class="outer">
+        <div class="inner">
+            <div class="inner-2">
+                <h1>Боевики</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>  <!-- Было бы конечно круто на реакте реализовать SPA, думаю можно даже при помощи библиотек js, но у меня нет столько времени-->
+    
+    <div class="genre">
+        <h1 class="film">Рэмбо 1</h1>
+        <h1 class="film">Лига справедливости</h1>
+        <h1 id="mv" class="film">Джон Уик 2</h1>
+        <h1 id="mv" class="film">Ярость</h1>
+    </div>
+
+    <div class="gallery">
+        <img class="img" src="img/rambo.png" alt="Rambo" onclick="action_redirect()">
+        <img class="img" src="img/action-1.jpg" alt="a" onclick="window.location.href =  'https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D0%B3%D0%B0_%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%B5%D0%B4%D0%BB%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D0%B8_%D0%97%D0%B0%D0%BA%D0%B0_%D0%A1%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D1%80%D0%B0'">
+        <img class="img" src="img/action-2.jpg" alt="a" onclick="window.location.href = 'https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D0%BE%D0%BD_%D0%A3%D0%B8%D0%BA_2'">
+        <img class="img" src="img/action-3.jpg" alt="a" onclick="window.location.href = 'https://ru.wikipedia.org/wiki/%D0%AF%D1%80%D0%BE%D1%81%D1%82%D1%8C_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2014)'">
+    </div>
+
+</body>
+</html>

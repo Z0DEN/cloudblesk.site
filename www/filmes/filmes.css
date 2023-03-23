@@ -6,21 +6,6 @@
     overflow-y: hidden;
 }
 
-:root{
-    --index: calc(1vw + 1vh);
-    --color-header: #f7f2f0;
-    --color-text: #dbd8d6;
-}
-@font-face {
-    font-family: raleway-c;
-    src: url(../fonts/raleway-regular.woff2);
-}
-
-@font-face {
-    font-family: outfit-c;
-    src: url(../fonts/outfit-regular.woff2);
-}
-
 body{
     background-color: rgb(103, 243, 253);
 }
@@ -58,7 +43,24 @@ body{
     margin-right: 40px;
     width: 15vw;
     height: auto;
-    margin-bottom: 200px;
+    margin-bottom: 190px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+
+}
+
+.img:hover {
+    cursor: pointer;
+    height:auto;
+    width: 16vw;
+}
+#img-a:hover {
+    cursor: pointer;
+    height:auto;
+    width: 15.8vw;
 }
 
 .h2{
