@@ -96,7 +96,7 @@ body{
     animation: left 20s 0.5s linear 1 normal;
     -moz-animation: left 20s 0.5s linear 1 normal;
     -webkit-animation: left 20s 0.5s linear 1 normal;
-    animation-iteration-count: 99999999999;
+    animation-iteration-count: infinite;
 }
 
 .l-port-h1{
@@ -263,7 +263,7 @@ body{
     margin-top: 80px;
 }
 
-.git_img{
+.GIT_img{
     display: flex;
     width: 700px;
     justify-content: space-around;
@@ -272,13 +272,53 @@ body{
 
 .img-git{
     width: 200px;
-    height: auto;
+    height: 200px;
+}
+
+.git_img{
+    overflow-x: hidden;
+    position: relative;
+    width: 204px;
+    height: 204px;
+    border-radius: 50%;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
-.img-git:hover{
+.git_img:hover{
     scale: 120%;
+}
+
+.flare-github {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    transform: skewX(-45deg);
+    animation-name: flareAnimation;
+    left: -300%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    animation: flareAnimation 5s infinite linear;
+}
+.flare-telegram {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    transform: skewX(-45deg);
+    animation-name: flareAnimation;
+    left: -300%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    animation: flareAnimation 5s infinite linear;
+}
+
+@keyframes flareAnimation {
+    0% {
+        left: -300%;
+    }
+    100% {
+        left: 300%;
+    }
 }
