@@ -276,10 +276,10 @@ body{
 }
 
 .git_img{
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
-    width: 204px;
-    height: 204px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -294,7 +294,7 @@ body{
 .flare-github {
     position: absolute;
     top: 0;
-    height: 100%;
+    height: 200px;
     width: 45px;
     transform: skewX(-45deg);
     animation-name: flareAnimation;
