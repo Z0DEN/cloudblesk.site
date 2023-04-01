@@ -322,3 +322,14 @@ body{
         left: 300%;
     }
 }
+.bad_wolf{
+    white-space: nowrap;
+    height: 2000px;
+    position: absolute;
+    font-size: 2000%;
+    rotate: 90deg;
+    left: -500px;
+    top:800px;
+    color:white;
+    opacity: 0%;
+}

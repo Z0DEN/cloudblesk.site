@@ -1,2 +1,7 @@
+User-agent: Google
 User-agent: Yandex
-Disallow : /wordpress
+User-agent: *
+
+Disallow: /wordpress
+
+Sitemap

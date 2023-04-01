@@ -13,6 +13,17 @@
 .blue { background-color: #0000ff; }
 .red { background-color: #ff0000; }
 
+.bad_wolf{
+    white-space: nowrap;
+    height: 2000px;
+    position: absolute;
+    font-size: 2000%;
+    rotate: 90deg;
+    left: -500px;
+    top:-300px;
+    color:white;
+    opacity: 0%;
+}
 
 .heart {
     position: relative;
