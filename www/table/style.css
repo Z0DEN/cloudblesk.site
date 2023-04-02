@@ -1,0 +1,75 @@
+html{
+  width: 1680px;
+  height: auto;
+  background-color: antiquewhite;
+}
+
+body{
+  justify-content: center;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  height: auto;
+  width: 500px;
+  border: 10px;
+  border-collapse: collapse;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color:rgb(245, 216, 178);
+}
+
+caption{
+  font-size: 3rem;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  background-color: rgb(245, 216, 178);
+  border-radius: 10px;
+  border: 5px solid rgb(248, 188, 109);
+}
+
+.header-row{
+  font-size: 150%;
+}
+
+.row{
+  font-size: 1.5em;
+}
+
+th{
+  border: 1px solid black;
+  padding: 10px;
+}
+
+td{
+  display: table-cell;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.clients{
+  white-space: nowrap;
+}
+
+.services td:nth-child(3){
+  background-color: rgba(255, 0, 0, 0.514);
+}
+.services-provided td:nth-child(4){
+  background-color: rgba(217, 250, 31, 0.726);
+}
+.services td:nth-child(1){
+  background-color: rgba(217, 250, 31, 0.726);
+}
+.services-provided td:nth-child(3){
+  background-color: rgba(45, 153, 255, 0.726);
+}
+.clients td:nth-child(1){
+  background-color: rgba(45, 153, 255, 0.726);
+}

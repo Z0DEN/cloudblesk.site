@@ -35,6 +35,17 @@ body{
     top: 1vh;
 }
 
+table{
+    border-collapse: collapse;
+}
+
+th{
+    padding: 15px;
+}
+
+td{
+    padding: 10px 0 10px 0;
+}
 .container{
     padding: 0 5vw;
 }
