@@ -5,11 +5,14 @@ html{
 }
 
 body{
-  justify-content: center;
   width: auto;
   height: auto;
+}
+
+.table-div{
   display: flex;
   justify-content: space-between;
+
 }
 
 table{
@@ -72,4 +75,69 @@ td{
 }
 .clients td:nth-child(1){
   background-color: rgba(45, 153, 255, 0.726);
+}
+
+
+
+
+.buy-div{
+  display: flex;
+  margin-top: 50px;
+}
+
+.order{
+  box-sizing: border-box;
+
+  width: 500px;
+  height: 1500px;
+
+  background: #F8D8B2;
+  border: 1px solid #000000;
+}
+
+.pay{
+  position: relative;
+  left: 100px;
+
+  width: 500px;
+  height: 698px;
+
+  background: #F8D8B2;
+  border: 1px solid #000000;
+}
+
+h1{
+  box-sizing: border-box;
+  position: relative;
+
+  height: 100px;
+
+  background: #FFCC91;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  align-items: center;
+  line-height: 100px;
+
+  text-align: center;
+  margin: 70px 70px 50px 70px ;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+
+  color: #000000;
+}
+
+
+.order-service{
+  display: flex;
+  flex-direction: column;
+}
+
+.order-service > *{
+  text-align: center;
+  width: auto;
+  height: 100px;
 }
