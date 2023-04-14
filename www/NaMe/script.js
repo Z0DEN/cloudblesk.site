@@ -5,5 +5,5 @@ console.log(`Переменная admin = ${admin}`)
 function getName(){
   name = document.getElementsByName("firstname")[0].value;
   admin = name
-  alert(`Ваше имя ${admin} записано в переменную name затем скопировано в admin`)
+  alert(`Ваше имя ${adsmin} записано в переменную name затем скопировано в admin`)
 }
