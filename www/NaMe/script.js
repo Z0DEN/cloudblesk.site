@@ -1,5 +1,9 @@
+let name = "Джон"
+let admin = name
+console.log(`Переменная name = ${name}`)
+console.log(`Переменная admin = ${admin}`)
 function getName(){
-  let name = document.getElementsByName("firstname")[0].value;
-  let admin = name
+  name = document.getElementsByName("firstname")[0].value;
+  admin = name
   alert(`Ваше имя ${admin} записано в переменную name затем скопировано в admin`)
 }
