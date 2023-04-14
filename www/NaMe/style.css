@@ -1,0 +1,51 @@
+.db{
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+}
+
+.input{
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+label{
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+input{
+  width: 392px;
+  height: 50px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+button{
+  width: 400px;
+  height: 60px;
+  background-color: rgb(99, 240, 70);
+  border-color: green;
+  font-size: 2rem;
+}
+
+button:active{
+  animation: scale 150ms ease-in-out;
+  background-color: rgb(49, 219, 15);
+}
+
+@keyframes scale {
+  0% {
+    scale: 100%;
+  }
+  50% {
+    scale: 90%;
+  }
+  100% {
+    scale: 100%;
+  }
+}
