@@ -7,9 +7,14 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20vh;
+  border: 3px solid green;
+  background-color: rgb(201, 241, 156);
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px ;
 }
 
 .input{
+  background-color: rgb(201, 241, 156);
   width: auto;
   display: flex;
   flex-direction: column;
@@ -17,6 +22,7 @@
 }
 
 label{
+  background-color: rgb(201, 241, 156);
   text-align: center;
   padding-bottom: 10px;
   font-size: 2.5rem;

@@ -1,9 +1,21 @@
+body{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto;
+  justify-items: center;
+}
+
+
 .RSP{
+  margin-top: 35px;
+  grid-column: 1;
   display: flex;
   flex-direction: column;
   width: 500px;
-  height: auto;
+  height: 170px;
   align-items: center;
+  border: 2px solid blue;
+  border-radius: 10px;
 }
 
 .RSP button{
@@ -13,9 +25,11 @@
   background-color: rgb(72, 213, 248);
   border-color: rgb(4, 72, 134);
   font-size: 2rem;
+  border-radius: 10px;
+
 }
 
-button:active{
+.RSP button:active{
   animation: scale 150ms ease-in-out;
   background-color: rgb(15, 154, 219);
 }
@@ -30,4 +44,50 @@ button:active{
   100% {
     scale: 100%;
   }
+}
+
+
+#textForm{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  top: 20px;
+  right: 80px;
+}
+
+#textForm select{
+  height: 60px;
+  width: 70px;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  border: 2px solid blueviolet;
+  border-radius: 10px;
+
+}
+
+#textForm input{
+  padding: 10px;
+  margin-bottom: 15px;
+  height: 30px;
+  font-size: 2.5rem;
+  border: 2px solid blueviolet;
+  border-radius: 10px;
+
+}
+
+#textForm button{
+  font-size: 2.3rem;
+  width: 350px;
+  height: 60px;
+  background-color: rgb(190, 135, 241);
+  border-color: rgb(90, 20, 117);
+  font-size: 2rem;
+  border-radius: 10px;
+}
+
+#textForm button:active{
+  animation: scale 150ms ease-in-out;
+  background-color: rgb(152, 103, 209);
 }
