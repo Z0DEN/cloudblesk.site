@@ -1,0 +1,33 @@
+.RSP{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: auto;
+  align-items: center;
+}
+
+.RSP button{
+  font-size: 2.3rem;
+  width: 350px;
+  height: 60px;
+  background-color: rgb(72, 213, 248);
+  border-color: rgb(4, 72, 134);
+  font-size: 2rem;
+}
+
+button:active{
+  animation: scale 150ms ease-in-out;
+  background-color: rgb(15, 154, 219);
+}
+
+@keyframes scale {
+  0% {
+    scale: 100%;
+  }
+  50% {
+    scale: 90%;
+  }
+  100% {
+    scale: 100%;
+  }
+}
