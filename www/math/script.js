@@ -3,39 +3,42 @@ S = "ножницы"
 P = "бумага"
 
 function getRandomInt(UserChoice) {
-  rndInt = Math.floor(Math.random() * 3);
+  rndInt = String(Math.floor(Math.random() * 3))
   console.log(rndInt)
-  switch (rndInt){
-    case 0:
-      switch (UserChoice){        //Scissors
-        case P: alert (`Поражение : ${UserChoice} VS ${S}`); 
-        break;
-        case S: alert (`Ничья : ${UserChoice} VS ${S}`)
-        break;
-        case R: alert (`Победа : ${UserChoice} VS ${S}`)
-        break;
-      }
-    break;
-    case 1:
-      switch (UserChoice){       //Paper
-        case P: alert (`Ничья : ${UserChoice} VS ${P}`)
-        break;
-        case S: alert (`Победа : ${UserChoice} VS ${P}`)
-        break;
-        case R: alert (`Поражение : ${UserChoice} VS ${P}`)
-        break;
-      }
-    break;
-    case 2:
-      switch (UserChoice){       //Rock
-        case P: alert (`Победа : ${UserChoice} VS ${R}`)
-        break;
-        case S: alert (`Поражение : ${UserChoice} VS ${R}`)
-        break;
-        case R: alert (`Ничья : ${UserChoice} VS ${R}`)
-        break;
-      }
-    break;
+  if (rndInt === "0"){
+    if (UserChoice === P){        //Scissors
+      alert (`Поражение : ${UserChoice} VS ${S}`);
+    }
+    if (UserChoice === S){        //Scissors
+      alert (`Ничья : ${UserChoice} VS ${S}`)
+    }
+    if (UserChoice === R){        //Scissors
+      alert (`Победа : ${UserChoice} VS ${S}`)
+    }
+  }
+  console.log(rndInt)
+  if (rndInt === "1"){
+    if (UserChoice === P){        //Rock
+      alert (`Победа : ${UserChoice} VS ${R}`)
+    }
+    if (UserChoice === S){        //Rock
+      alert (`Поражение : ${UserChoice} VS ${R}`)
+    }
+    if (UserChoice === R){        //Rock
+      alert (`Ничья : ${UserChoice} VS ${R}`)
+    }
+  }
+  console.log(rndInt)
+  if (rndInt === "2"){
+    if (UserChoice === P){        //Paper
+      alert (`Ничья : ${UserChoice} VS ${P}`)
+    }
+    if (UserChoice === S){        //Paper
+      alert (`Победа : ${UserChoice} VS ${P}`)
+    }
+    if (UserChoice === R){        //Paper
+      alert (`Поражение : ${UserChoice} VS ${P}`)
+    }
   }
 }
 
