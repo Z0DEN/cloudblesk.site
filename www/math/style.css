@@ -130,6 +130,8 @@
   width: 100px;
   height: 100px;
   opacity: 100%;
+  bottom: 10px;
+  left: 15px;
 }
 
 #cross{
@@ -137,6 +139,8 @@
   width: 75px;
   height: 75px;
   opacity: 100%;
+  bottom: 8px;
+  right: 80px;
 }
 
 @keyframes appearance {
