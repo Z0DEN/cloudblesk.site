@@ -87,17 +87,18 @@
 
 #textForm button:active{
   animation: scale 150ms ease-in-out;
-  background-color: rgb(152, 103, 209);
+  background-color: rgba(152, 103, 209);
 }
 
 #test{
+  margin-top: 50px;
   display: flex;
   height: auto;
   flex-direction: column;
   font-size: 130%;
   color: rgb(214, 2, 90);
   border-radius: 10px;
-  padding: 1px 90px 30px 65px;
+  padding: 0px 35px 15px 35px;
 }
 #test select{
   height: 60px;
@@ -108,6 +109,7 @@
   border: 2px solid rgb(226, 43, 119);
   border-radius: 10px;
   color: rgb(214, 2, 90);
+  background-color: rgba(255, 255, 255, 0);
 }
 #test span{
   padding: 10px;
@@ -126,33 +128,88 @@
 }
 
 #checkbox{
-  position:relative;
+  position:absolute;
   width: 100px;
   height: 100px;
   opacity: 0%;
-  bottom: 10px;
-  left: 15px;
+  margin-bottom: 25px;
+  margin-left: 315px;
 }
 
 #cross{
-  position: relative;
+  position: absolute;
   width: 75px;
   height: 75px;
   opacity: 0%;
-  bottom: 8px;
-  right: 80px;
+  margin-bottom: 15px;
+  margin-left: 330px;
+}
+
+#fix_div{
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  z-index: -99999;
 }
 
 @keyframes appearance {
   0% {
     opacity: 20%;
   }
-  50% {
+  10% {
+    opacity: 50%;
+  }
+  20% {
+    opacity: 100%;
+  }
+  80% {
+    opacity: 100%;
+  }
+  90% {
     opacity: 50%;
   }
   100% {
-    opacity: 100%;
+    opacity: 0%;
   }
 }
-
-
+@keyframes appearance_checkbox_back {
+  0% {
+    background-color: rgba(190, 238, 141, 0.1);
+  }
+  10% {
+    background-color: rgba(190, 238, 141, 0.3);
+  }
+  20% {
+    background-color: rgba(190, 238, 141, 0.445);
+  }
+  80% {
+    background-color: rgba(190, 238, 141, 0.445);
+  }
+  90% {
+    background-color: rgba(190, 238, 141, 0.3);
+  }
+  100% {
+    background-color: rgba(190, 238, 141, 0.1);
+  }
+}
+@keyframes appearance_cross_back {
+  0% {
+    background-color: rgba(238, 141, 141, 0.1);
+  }
+  10% {
+    background-color: rgba(238, 141, 141, 0.3);
+  }
+  20% {
+    background-color: rgba(238, 141, 141, 0.445);
+  }
+  80% {
+    background-color: rgba(238, 141, 141, 0.445);
+  }
+  90% {
+    background-color: rgba(238, 141, 141, 0.3);
+  }
+  100% {
+    background-color: rgba(238, 141, 141, 0.1);
+  }
+}
