@@ -94,6 +94,8 @@
   font-size: 130%;
   text-align: center;
   color: rgb(214, 2, 90);
+  border-radius: 10px;
+  padding: 1px 90px 30px 65px;
 }
 #test select{
   height: 60px;
@@ -114,9 +116,34 @@
   border-radius: 10px;
 }
 
-img{
+#checkbox{
   position: absolute;
   width: 100px;
   height: 100px;
   top: 380px;
+  opacity: 0%;
+  right: 995px;
 }
+
+#cross{
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  top: 398px;
+  right: 1010px;
+  opacity: 0%;
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 20%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+

@@ -108,14 +108,42 @@ event.preventDefault()
   num2 = document.getElementsByClassName('test-2-input')[0].innerHTML
   let sign = document.getElementById("select-test").value
   switch(sign){
-    case ">" : message = (num1 > num2) && (sign === ">") ? "ВЕРНО!!!" : "НЕВЕРНО((("; break;
-    case "<" : message = (num1 < num2) && (sign === "<") ? "ВЕРНО!!!" : "НЕВЕРНО((("; break;
-    case "=" : message = (num1 === num2) && (sign === "=") ? "ВЕРНО!!!" : "НЕВЕРНО((("; break;
+    case ">" : message = (num1 > num2) && (sign === ">") ? true : false; break;
+    case "<" : message = (num1 < num2) && (sign === "<") ? true : false; break;
+    case "=" : message = (num1 === num2) && (sign === "=") ? true : false; break;
   }
-  if (message === "ВЕРНО!!!"){
-    const newImg = document.createElement('img');
-    newImg.src = 'https://cdn-icons-png.flaticon.com/512/5290/5290058.png';
-    const body = document.getElementById('body');
-    body.appendChild(newImg);
-  }
+
+  // check = document.getElementById('checkbox').style.width
+  // cross = document.getElementById('cross').style.width
+  // alert(check)
+
+  // if (check === '0%' && cross === '0%'){
+    if (message){
+      const form_sel = document.getElementById('select-test').style;
+      const form = document.getElementById('test').style;
+      const img_checkbox = document.getElementById('checkbox').style;
+      img_checkbox.animation = 'appearance 350ms ease-in-out infinite';
+      form_sel.backgroundColor = 'rgba(255, 255, 255, 0)';
+      form.backgroundColor = 'rgba(190, 238, 141, 0.445)';
+
+      setTimeout(() => {
+        img_checkbox.animationPlayState = 'paused'
+      }, 300); 
+    }
+    else {
+      const form_sel = document.getElementById('select-test').style;
+      const form = document.getElementById('test').style;
+      const img_cross = document.getElementById('cross').style;
+      img_cross.animation = 'appearance 350ms ease-in-out infinite';
+      form_sel.backgroundColor = 'rgba(255, 255, 255, 0)';
+      form.backgroundColor = 'rgba(238, 141, 141, 0.445)';
+
+      setTimeout(() => {
+        img_cross.animationPlayState = 'paused'
+      }, 300); 
+    }
+  // }
+  setTimeout(() => {
+    window.location.reload();
+  }, 3000);
 }
