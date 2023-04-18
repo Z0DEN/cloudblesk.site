@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="RSP">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div id="body" ></div>  
+
+    <div class="body">
+    <div class="RSP">
     <h1>Камень, ножницы, бумага</h1>
-    <button type="button" onclick="rsp()">Сыграть</button>
+    <button type="button" onclick="getUserChoice()">Сыграть</button>
   </div>
 
   <form id="textForm" name="textForm">
@@ -25,5 +29,21 @@
     <input type="number" id="value2">
     <button type="button" onclick="calc()">Расчитать</button>
   </form>
+  
+  <div class="test">
+    <form id="test">
+      <h1>Решите неравенство</h1>
+      <span class="test-1-input"></span>
+      <select onchange="test()" id="select-test">
+        <option value="choise">?</option>
+        <option value=">">></option>
+        <option value="<"><</option>
+        <option value="=">=</option>
+      </select>
+      <span class="test-2-input"></span>
+    </form>
+
+  </div>
+</div>
 </body>
 </html>

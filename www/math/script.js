@@ -2,10 +2,13 @@ R = "камень"
 S = "ножницы"
 P = "бумага"
 
-function getRandomInt(UserChoice) {
-  rndInt = String(Math.floor(Math.random() * 3))
-  console.log(rndInt)
-  if (rndInt === "0"){
+function randomInteger(max){
+  return Math.floor(Math.random() * max)
+}
+
+function rsp(UserChoice) {
+  rndInt = randomInteger(3)
+  if (rndInt === 0){
     if (UserChoice === P){        //Scissors
       alert (`Поражение : ${UserChoice} VS ${S}`);
     }
@@ -16,8 +19,8 @@ function getRandomInt(UserChoice) {
       alert (`Победа : ${UserChoice} VS ${S}`)
     }
   }
-  console.log(rndInt)
-  if (rndInt === "1"){
+
+  else if (rndInt === 1){
     if (UserChoice === P){        //Rock
       alert (`Победа : ${UserChoice} VS ${R}`)
     }
@@ -28,8 +31,8 @@ function getRandomInt(UserChoice) {
       alert (`Ничья : ${UserChoice} VS ${R}`)
     }
   }
-  console.log(rndInt)
-  if (rndInt === "2"){
+
+  else {
     if (UserChoice === P){        //Paper
       alert (`Ничья : ${UserChoice} VS ${P}`)
     }
@@ -42,10 +45,12 @@ function getRandomInt(UserChoice) {
   }
 }
 
+var arr = ['камень', 'ножницы', 'бумага']
 
-function rsp(){
-  UserChoice = prompt("Камень! Ножницы! Бумага!").toLowerCase()
-  getRandomInt(UserChoice)
+function getUserChoice(){
+  var rndWord = Math.floor(Math.random() * arr.length)
+  UserChoice = prompt("Камень! Ножницы! Бумага!", `${arr[rndWord]}`).toLowerCase()
+  rsp(UserChoice)
 }
 
 
@@ -71,5 +76,46 @@ function calc(){
     result = value_1 / value_2
     alert (`${value_1} / ${value_2} = ${result}`)
     break;
+  }
+}
+
+function testRandomizer(){
+  switch (randomInteger(3)){
+    case 0: 
+    input_1[0].innerHTML = randomInteger(1000000)
+    input_2[0].innerHTML = randomInteger(1000000)
+    break;
+    case 1: 
+    input_1[0].innerHTML = randomInteger(1000000)
+    input_2[0].innerHTML = randomInteger(1000000)
+    break;
+    case 2:
+    var int = randomInteger(1000000)
+    input_1[0].innerHTML = int
+    input_2[0].innerHTML = int
+    break;
+  }
+}
+
+var input_1 = document.getElementsByClassName("test-1-input")
+var input_2 = document.getElementsByClassName("test-2-input")
+testRandomizer()
+
+function test(){
+event.preventDefault()
+
+  num1 = document.getElementsByClassName('test-1-input')[0].innerHTML
+  num2 = document.getElementsByClassName('test-2-input')[0].innerHTML
+  let sign = document.getElementById("select-test").value
+  switch(sign){
+    case ">" : message = (num1 > num2) && (sign === ">") ? "ВЕРНО!!!" : "НЕВЕРНО((("; break;
+    case "<" : message = (num1 < num2) && (sign === "<") ? "ВЕРНО!!!" : "НЕВЕРНО((("; break;
+    case "=" : message = (num1 === num2) && (sign === "=") ? "ВЕРНО!!!" : "НЕВЕРНО((("; break;
+  }
+  if (message === "ВЕРНО!!!"){
+    const newImg = document.createElement('img');
+    newImg.src = 'https://cdn-icons-png.flaticon.com/512/5290/5290058.png';
+    const body = document.getElementById('body');
+    body.appendChild(newImg);
   }
 }
