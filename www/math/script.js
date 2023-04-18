@@ -84,15 +84,18 @@ function testRandomizer(){      //Функция рандомайзер. Бла�
     case 0: 
     input_1[0].innerHTML = randomInteger(1000000)
     input_2[0].innerHTML = randomInteger(1000000)
+    favicon = document.getElementById('favicon').setAttribute('href', 'https://img.icons8.com/office/256/geometry.png')     //рандомная фавиконка
     break;
     case 1: 
     input_1[0].innerHTML = randomInteger(1000000)
     input_2[0].innerHTML = randomInteger(1000000)
+    favicon = document.getElementById('favicon').setAttribute('href', 'https://img.icons8.com/pulsar-color/256/trigonometry.png')    //рандомная фавиконка
     break;
     case 2:
     var int = randomInteger(1000000)
     input_1[0].innerHTML = int
     input_2[0].innerHTML = int
+    favicon = document.getElementById('favicon').setAttribute('href', 'https://img.icons8.com/office/256/more-or-equal-2.png')      //рандомная фавиконка
     break;
   }
 }
