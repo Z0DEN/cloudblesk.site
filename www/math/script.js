@@ -6,6 +6,7 @@ function randomInteger(max){     //Функция возврващает ран�
   return Math.floor(Math.random() * max)
 }
 
+
 function rsp(UserChoice) {      //Фунция на основе рандомного значения от 0 до 3 выводит исход игры (поражение, победа, ничья), учитывая выбор пользователя (UserChoice)
   rndInt = randomInteger(3)
   if (rndInt === 0){    //Если машина выбрала ножницы
@@ -43,17 +44,82 @@ function rsp(UserChoice) {      //Фунция на основе рандомн�
       alert (`Поражение : ${UserChoice} VS ${P}`)
     }
   }
+  trp_div.backgroundColor = "rgba(255, 255, 255, 0)"
+  trp_div.zIndex = "-999"
+  alert('its iiiiiif brooooooo')
 }
 
+// Следующая функция абсолютно схожа с предыдущей, но написана с использованием кнструкции [switch]
 
-function getUserChoice(){
-  var arr = ['камень', 'ножницы', 'бумага']  //массив для рандомного выбора пользователя в [prompt]
-  var rndWord = Math.floor(Math.random() * arr.length)
-  UserChoice = prompt("Камень! Ножницы! Бумага!", `${arr[rndWord]}`).toLowerCase()
-  rsp(UserChoice)
+function rsp_switch(UserChoice) {      //Фунция на основе рандомного значения от 0 до 3 выводит исход игры (поражение, победа, ничья), учитывая выбор пользователя (UserChoice)
+  rndInt = randomInteger(3)
+  switch (rndInt){
+    case 0:
+      switch (UserChoice){        //Scissors
+        case P: alert (`Поражение : ${UserChoice} VS ${S}`); 
+        break;
+        case S: alert (`Ничья : ${UserChoice} VS ${S}`)
+        break;
+        case R: alert (`Победа : ${UserChoice} VS ${S}`)
+        break;
+      }
+    break;
+    case 1:
+      switch (UserChoice){       //Paper
+        case P: alert (`Ничья : ${UserChoice} VS ${P}`)
+        break;
+        case S: alert (`Победа : ${UserChoice} VS ${P}`)
+        break;
+        case R: alert (`Поражение : ${UserChoice} VS ${P}`)
+        break;
+      }
+    break;
+    case 2:
+      switch (UserChoice){       //Rock
+        case P: alert (`Победа : ${UserChoice} VS ${R}`)
+        break;
+        case S: alert (`Поражение : ${UserChoice} VS ${R}`)
+        break;
+        case R: alert (`Ничья : ${UserChoice} VS ${R}`)
+        break;
+      }
+    break;
+  }
+  trp_div.backgroundColor = "rgba(255, 255, 255, 0)"
+  trp_div.zIndex = "-999"
+  alert('its a swiiiiitch brooooooo')
 }
 
+function dialog_construction_choice(){
+  trp_div.backgroundColor = "rgba(161, 113, 113, 0.493)"
+  trp_div.zIndex = "999"
+  window.myDialog.show()
+}
 
+// Для кмн на [switch]
+function choice_switch(){
+  window.myDialog_choice_switch.show()
+}
+
+// Для кмн на [if]
+function choice_if(){
+  window.myDialog_choice_if.show()
+}
+
+const trp_div = document.getElementById("transparent_div").style;
+const choice_dialog = document.getElementById("transparent_div").style;
+
+
+function dialog_user_choice_if(){
+  trp_div.backgroundColor = "rgba(161, 113, 113, 0.493)"
+  trp_div.zIndex = "999"
+  window.myDialog.show()
+}
+function dialog_user_choice_switch(){
+  trp_div.backgroundColor = "rgba(161, 113, 113, 0.493)"
+  trp_div.zIndex = "999"
+  window.myDialog.show()
+}
 
 function calc(){      // Функция калькулятора
   value_1 = Number(document.getElementById('value1').value)     //значение первого [input]
@@ -75,6 +141,10 @@ function calc(){      // Функция калькулятора
     case "/" : 
     result = value_1 / value_2
     alert (`${value_1} / ${value_2} = ${result}`)
+    break;
+    case "**" : 
+    result = value_1**value_2
+    alert (`${value_1} ** ${value_2} = ${result}`)
     break;
   }
 }
@@ -117,7 +187,7 @@ function test(){
   const form = document.getElementById('test').style;                 //Получаем стили формы
   const img_checkbox = document.getElementById('checkbox').style;     //Получаем стили картинки галочки
   const img_cross = document.getElementById('cross').style;           //Получаем стили картинки крестика
-  
+
   if (document.getElementById('fix_div').innerHTML != 'its a crutch'){      //Проверяем есть ли в невидимом элементе текст. Если да значит функция уже выполняеться
     if (test_check){      //Если пользователь ответил правильно
       img_checkbox.animation = 'appearance 3000ms ease-in-out';         //Запускаем анимацию появления для галочки.      Возможно костыль но по-другому не знаю как

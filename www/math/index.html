@@ -11,10 +11,44 @@
   </head>
   <body>
 
-<div class="body">
+    <div class="transparent_div" id="transparent_div">
+      <dialog id="myDialog">
+        <p>Играть на конструкции switch или if?</p>
+        <form method="dialog">
+          <button onclick="choice_switch()">switch</button>
+          <button onclick="choice_if()">if</button>
+        </form>
+      </dialog>
+
+      <dialog id="myDialog_choice_switch">
+        <p>Камень, ножницы, бумага!!!
+          <br>
+          <i>(на switch)</i>
+        </p>
+        <form method="dialog">
+          <button onclick="rsp_switch('камень')">камень</button>
+          <button onclick="rsp_switch('ножницы')">ножницы</button>
+          <button onclick="rsp_switch('бумага')">бумага</button>
+        </form>
+      </dialog>
+
+      <dialog id="myDialog_choice_if">
+        <p>Камень, ножницы, бумага!!!
+          <br>
+          <i>(на if)</i>
+        </p>
+        <form method="dialog">
+          <button onclick="rsp('камень')">камень</button>
+          <button onclick="rsp('ножницы')">ножницы</button>
+          <button onclick="rsp('бумага')">бумага</button>
+        </form>
+      </dialog>
+    </div> 
+
+    <div class="body">
   <div class="RSP">
     <h1>Камень, ножницы, бумага</h1>
-    <button type="button" onclick="getUserChoice()">Сыграть</button>
+    <button type="button" onclick="dialog_construction_choice()">Сыграть</button>
   </div>
 
   <form id="textForm" name="textForm">
@@ -24,6 +58,7 @@
       <option value="-">-</option>
       <option value="*">*</option>
       <option value="/">/</option>
+      <option value="**">**</option>
     </select>
     <input type="number" id="value2">
     <button type="button" onclick="calc()">Рассчитать</button>
@@ -48,7 +83,6 @@
   </div>
 
 <div id="fix_div"></div>
-
 </div>
 
 </body>
