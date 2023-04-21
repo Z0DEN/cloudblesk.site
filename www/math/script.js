@@ -90,36 +90,36 @@ function rsp_switch(UserChoice) {      //Фунция на основе ранд
   alert('its a swiiiiitch brooooooo')
 }
 
-function dialog_construction_choice(){
+function dialog_construction_choice(){      //Показываем диалоговое окно выбора конструкции
   trp_div.backgroundColor = "rgba(161, 113, 113, 0.493)"
   trp_div.zIndex = "999"
   window.myDialog.show()
 }
 
-// Для кмн на [switch]
 function choice_switch(){
-  window.myDialog_choice_switch.show()
+  window.myDialog_choice_switch.show()      //Если пользователь выбрал [switch]
+}
+
+function choice_if(){
+  window.myDialog_choice_if.show()      //Если пользователь выбрал [if]
+}
+
+const trp_div = document.getElementById("transparent_div").style;           //Получаем стили дива с диалоговым окном
+
+// Для кмн на [switch]
+function dialog_user_choice_switch(){
+  trp_div.backgroundColor = "rgba(161, 113, 113, 0.493)"      //Добавляем розовый фон
+  trp_div.zIndex = "999"      //поднимаем диалоговое окно наверх, чтобы работало
+  window.myDialog.show()      //Показываем диалоговое окно
 }
 
 // Для кмн на [if]
-function choice_if(){
-  window.myDialog_choice_if.show()
-}
-
-const trp_div = document.getElementById("transparent_div").style;
-const choice_dialog = document.getElementById("transparent_div").style;
-
-
 function dialog_user_choice_if(){
-  trp_div.backgroundColor = "rgba(161, 113, 113, 0.493)"
-  trp_div.zIndex = "999"
-  window.myDialog.show()
+  trp_div.backgroundColor = "rgba(161, 113, 113, 0.493)"      //Добавляем розовый фон
+  trp_div.zIndex = "999"      //поднимаем диалоговое окно наверх, чтобы работало
+  window.myDialog.show()      //Показываем диалоговое окно
 }
-function dialog_user_choice_switch(){
-  trp_div.backgroundColor = "rgba(161, 113, 113, 0.493)"
-  trp_div.zIndex = "999"
-  window.myDialog.show()
-}
+
 
 function calc(){      // Функция калькулятора
   value_1 = Number(document.getElementById('value1').value)     //значение первого [input]
