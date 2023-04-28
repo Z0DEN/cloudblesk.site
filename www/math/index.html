@@ -43,13 +43,46 @@
           <button onclick="rsp('бумага')">бумага</button>
         </form>
       </dialog>
+
+      <dialog id="show_rules">
+        <div class="rule_RSP">
+          <h1>Камень, ножницы, бумага</h1>
+          <ul>
+            <li>За победу начисляется 1000</li>
+            <li>За поражение снимается 100</li>
+          </ul>
+        </div>
+        <div class="rule_math">
+          <h1>Калькулятор</h1>
+          <ul>
+            <li>За победу начисляется 100</li>
+            <li>За поражение снимается 1000 (хаха поражение в калькуляторе...)</li>
+            <i id="i">На самом деле там правда можно проиграть</i>
+            <span id="emoji">&#128527</span>
+          </ul>
+        </div>
+        <div class="rule_test">
+          <h1>Тест</h1>
+          <ul>
+            <li>За победу начисляется 500</li>
+            <li>За поражение снимается 500</li>
+          </ul>
+        </div>
+
+        <div id="div_reset_rules">
+          <button id="button_reset_rules" onclick="reset()">Закрыть</button>
+        </div>
+      
+      </dialog>
+      
+
     </div> 
 
-    <div class="body">
-  <div class="RSP">
-    <h1>Камень, ножницы, бумага</h1>
-    <button type="button" onclick="dialog_construction_choice()">Сыграть</button>
-  </div>
+  <div class="body">
+    <div class="RSP">
+      <h1>Камень, ножницы, бумага</h1>
+      <button type="button" onclick="dialog_construction_choice()">Сыграть</button>
+    </div>
 
   <form id="textForm" name="textForm">
     <input type="number" id="value1">
@@ -69,7 +102,7 @@
       <h1>Решите неравенство</h1>
       <div class="fix">
         <span class="test-1-input"></span>
-        <select onchange="test()" id="select-test">
+        <select onchange="test(value)" id="select-test">
           <option value="choise">?</option>
           <option value=">">></option>
           <option value="<"><</option>
@@ -82,8 +115,13 @@
     </form>
   </div>
 
-<div id="fix_div"></div>
-</div>
-
+  <div class="withdraw">
+    <h1>Очки:<span id="balance"></span></h1>
+  </div>
+    <div id="fix_div"></div>
+  </div>
+  <div class="rules">
+    <button onclick="rules_dialog()">ПРАВИЛА</button>
+  </div>
 </body>
 </html>

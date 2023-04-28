@@ -23,7 +23,7 @@ body{
   border-radius: 10px;
 }
 
-.RSP button{
+.RSP button, .rules button{
   font-size: 2.3rem;
   width: 350px;
   height: 60px;
@@ -31,10 +31,9 @@ body{
   border-color: rgb(4, 72, 134);
   font-size: 2rem;
   border-radius: 10px;
-
 }
 
-.RSP button:active{
+.RSP button:active, .rules button:active{
   animation: scale 150ms ease-in-out;
   background-color: rgb(15, 154, 219);
 }
@@ -245,6 +244,7 @@ dialog button{
   background: linear-gradient(-90deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 255, 0.7));
   border: 0px solid white;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 8px;
 }
 
 #myDialog_choice_switch, #myDialog_choice_if{
@@ -287,4 +287,45 @@ dialog button:hover{
   width: 100%;
   z-index: -999;
   align-items: center;
+}
+
+.rules{
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+}
+
+#div_reset_rules{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#i{
+  font-size: 80%;
+}
+
+#emoji{
+  font-size: 70%;
+}
+
+.withdraw{
+  width: 320px;
+  height: 115px;
+  margin-right: 200px;
+  margin-top: 90px;
+  padding: 0 30px 30px 30px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.withdraw h1{
+  padding: 15px 0 15px 15px;
+  font-size: 3rem;
+  font-weight: 100;
+  background-color: #ffc04a;
+  border-radius: 10px;
+}
+.withdraw span{
+  text-align: center;
+  padding-left: 30px;
 }
