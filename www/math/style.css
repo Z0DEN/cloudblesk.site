@@ -329,3 +329,17 @@ dialog button:hover{
   text-align: center;
   padding-left: 30px;
 }
+
+
+#spisok{
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  width: max-content;
+  margin-right: 200px;
+  grid-column: 2;
+  background-color: #ffc04a;
+  border: 20px solid #fcaf1fe1;
+  border-radius: 30px;
+  padding: 20px;
+}

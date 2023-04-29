@@ -135,8 +135,8 @@ function calc(){      // Функция калькулятора
     case "/" : 
     result = value_1 / value_2
     alert (`${value_1} / ${value_2} = ${result}`)
-    if (value_2 === '0'){
-      alert("НЕЛЬЗЯ ДЕЛИТЬ НА НОЛЬ")
+    if (value_2 === 0){
+      alert("НЕЛЬЗЯ ДЕЛИТЬ НА НОЛЬ!!!")
     }
     break;
     case "**" : 
@@ -223,16 +223,6 @@ function test(sign){
 
 window.user_score = 0
 
-// while (user_score === 0){
-//   span_bal = document.getElementById('balance')
-//   span_bal.innerHTML = `${user_score}`
-// }
-
-
-// while (user_score < 2500){
-  
-// }
-
 function rules_dialog(){
   trp_div.backgroundColor = "rgba(161, 113, 113, 0.493)"      //Добавляем розовый фон
   trp_div.zIndex = "999"      //поднимаем диалоговое окно наверх, чтобы работало
@@ -245,17 +235,30 @@ function reset(){
   window.show_rules.close()
 }
 
-
 span_balance = document.getElementById('balance')
 span_balance.innerHTML = `${user_score}`
 
+names = [
+  "Максим",
+  "Ира",
+  "Аполлинария",
+  "Санёчек",
+  "Ваня",
+]
 
+len = 0
+const list = document.getElementById('spisok')
 
-// do {
-//   span_bal.innerHTML = `${user_score}`
-// } while (user_score < 2500);
-
-
-if (user_score >= 2500){
-  alert("Поздравляем!!! Вы победили")
+while(len <= 20){
+  for (let index in names) {
+    let Name = names[index]
+    if (Name.length === len){
+      span = document.createElement('span')
+      span.innerHTML = `${Name} - ${Name.length} букв(ы)`
+      list.appendChild(span)
+    }
+  }
+  len += 1
 }
+
+//Не думаю что данная реализация самая лучшая в данной ситуации, но в задании нужно было именно с while и for
