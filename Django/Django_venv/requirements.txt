@@ -1,0 +1,11 @@
+arandr==0.1.10
+django==4.1.4
+gunicorn==20.1.0
+cupshelpers==1.0
+galternatives==1.0.8
+Mirage==0.11.1
+notify2==0.3
+pycairo==1.16.2
+pycups==2.0.1
+ufw==0.36.1
+xdg==5
