@@ -62,7 +62,7 @@ body{
 
 #textForm select{
   height: 60px;
-  width: fit-content;
+  width: max-content;
   text-align: center;
   font-size: 3rem;
   margin-bottom: 15px;
