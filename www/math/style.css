@@ -62,7 +62,7 @@ body{
 
 #textForm select{
   height: 60px;
-  width: 70px;
+  width: fit-content;
   text-align: center;
   font-size: 3rem;
   margin-bottom: 15px;
@@ -342,4 +342,5 @@ dialog button:hover{
   border: 20px solid #fcaf1fe1;
   border-radius: 30px;
   padding: 20px;
+  
 }

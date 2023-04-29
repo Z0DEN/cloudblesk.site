@@ -12,6 +12,7 @@ function rsp(UserChoice) {      //Фунция на основе рандомн�
   if (rndInt === 0){    //Если машина выбрала ножницы
     if (UserChoice === P){        //Если пользоваетель выбрал бумагу
       alert (`Поражение : ${UserChoice} VS ${S}`);
+      user_score += -100;
     }
     if (UserChoice === S){        //Если пользоваетель выбрал ножницы
       alert (`Ничья : ${UserChoice} VS ${S}`)
@@ -28,7 +29,8 @@ function rsp(UserChoice) {      //Фунция на основе рандомн�
       user_score += 1000
     }
     if (UserChoice === S){        //Если пользоваетель выбрал ножницы
-      alert (`Поражение : ${UserChoice} VS ${R}`)
+      alert (`Поражение : ${UserChoice} VS ${R}`);
+      user_score += -100;
     }
     if (UserChoice === R){        //Если пользоваетель выбрал камень
       alert (`Ничья : ${UserChoice} VS ${R}`)
@@ -44,7 +46,8 @@ function rsp(UserChoice) {      //Фунция на основе рандомн�
       user_score += 1000
     }
     if (UserChoice === R){      //Если пользоваетель выбрал камень
-      alert (`Поражение : ${UserChoice} VS ${P}`)
+      alert (`Поражение : ${UserChoice} VS ${P}`);
+      user_score += -100;
     }
   }
   trp_div.backgroundColor = "rgba(255, 255, 255, 0)"
@@ -60,7 +63,8 @@ function rsp_switch(UserChoice) {      //Фунция на основе ранд
   switch (rndInt){
     case 0:
       switch (UserChoice){        //Scissors
-        case P: alert (`Поражение : ${UserChoice} VS ${S}`); 
+        case P: alert (`Поражение : ${UserChoice} VS ${S}`);
+        user_score += -100;
         break;
         case S: alert (`Ничья : ${UserChoice} VS ${S}`)
         break;
@@ -76,7 +80,8 @@ function rsp_switch(UserChoice) {      //Фунция на основе ранд
         case S: alert (`Победа : ${UserChoice} VS ${P}`)
         user_score += 1000;
         break;
-        case R: alert (`Поражение : ${UserChoice} VS ${P}`)
+        case R: alert (`Поражение : ${UserChoice} VS ${P}`);
+        user_score += -100;
         break;
       }
     break;
@@ -85,7 +90,8 @@ function rsp_switch(UserChoice) {      //Фунция на основе ранд
         case P: alert (`Победа : ${UserChoice} VS ${R}`);
         user_score += 1000;
         break;
-        case S: alert (`Поражение : ${UserChoice} VS ${R}`)
+        case S: alert (`Поражение : ${UserChoice} VS ${R}`);
+        user_score += -100;
         break;
         case R: alert (`Ничья : ${UserChoice} VS ${R}`)
         break;
@@ -142,6 +148,9 @@ function calc(){      // Функция калькулятора
     case "**" : 
     result = value_1**value_2
     alert (`${value_1} ** ${value_2} = ${result}`)
+    break;
+    case "***" : result = squareOfSum(value_1,value_2)
+    alert (`квадрат суммы ${value_1} и ${value_2} = ${result}`)
     break;
   }
   if (result === Infinity){
@@ -223,6 +232,16 @@ function test(sign){
 
 window.user_score = 0
 
+function check() {
+  if (user_score >= 2500){
+    alert ("Поздравляем вы победили!!!")
+    user_score += -2500
+    span_balance.innerHTML = `${user_score}`
+  }
+}
+
+setInterval(check, 1000);
+
 function rules_dialog(){
   trp_div.backgroundColor = "rgba(161, 113, 113, 0.493)"      //Добавляем розовый фон
   trp_div.zIndex = "999"      //поднимаем диалоговое окно наверх, чтобы работало
@@ -249,8 +268,9 @@ names = [
 len = 0
 const list = document.getElementById('spisok')
 
-while(len <= 20){
-  for (let index in names) {
+
+while(len <= 20){     //Не думаю что данная реализация самая лучшая в данной ситуации, 
+  for (let index in names) {      //но в задании нужно было именно с while и for
     let Name = names[index]
     if (Name.length === len){
       span = document.createElement('span')
@@ -261,4 +281,5 @@ while(len <= 20){
   len += 1
 }
 
-//Не думаю что данная реализация самая лучшая в данной ситуации, но в задании нужно было именно с while и for
+
+const squareOfSum = (a, b) => (a + b) ** 2;
