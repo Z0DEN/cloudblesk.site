@@ -214,7 +214,7 @@ function test(sign){
       user_score += -500
       span_balance.innerHTML = `${user_score}`
     }
-    setTimeout(() => {      //Обновляем страницу для получения новых чисел
+    setTimeout(() => { // Получаем новые числа для теста
       const form = document.getElementById('test').style;                 //Получаем стили формы
       const img_cross = document.getElementById('cross').style;
       const img_checkbox = document.getElementById('checkbox').style
@@ -222,6 +222,7 @@ function test(sign){
       img_cross.animation = '1'
       img_checkbox.animation = '1'
       testRandomizer();
+      document.getElementById("select-test").value = "choise"     //возвращаем значение [select] на {?}
     }, 3100);
   }
 
