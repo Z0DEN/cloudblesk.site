@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-!h0d*68(s-9nk(5*6d7yz&*5z4$yq(js&d(&rq@dhwmxm_#@03
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','192.168.0.98','176.197.34.213','cloudblesk.site']
+ALLOWED_HOSTS = ['localhost','192.168.0.98','176.197.34.213','cloudblesk.site','127.0.0.1']
 
 
 # Application definition
