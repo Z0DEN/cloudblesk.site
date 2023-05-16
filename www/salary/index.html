@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Employees</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link id="favicon" rel="icon" type="image/x-icon" href="https://img.icons8.com/?size=512&id=104264&format=png">
+</head>
+<body>
+  <div id="container">
+    <h1>Employees</h1>
+
+    <ul>
+      <li>
+        <label for="john-doe">John Doe:</label>
+        <input type="number" id="john-doe" value="50000">
+      </li>
+      <li>
+        <label for="jane-smith">Jane Smith:</label>
+        <input type="number" id="jane-smith" value="60000">
+      </li>
+      <li>
+        <label for="bob-johnson">Bob Johnson:</label>
+        <input type="number" id="bob-johnson" value="75000">
+      </li>
+      <li>
+        <label for="alice-lee">Alice Lee:</label>
+        <input type="number" id="alice-lee" value="80000">
+      </li>
+    </ul>
+
+    <input type="submit" id="calculate" value="Calculate">
+
+    <div class="result">
+      <label>Total salary:</label>
+      <span id="total-salary"></span>
+    </div>
+
+    <div class="result">
+      <label>Average salary:</label>
+      <span id="average-salary"></span>
+    </div>
+
+    <div class="result">
+      <label>Highest salary:</label>
+      <span id="highest-salary"></span>
+    </div>
+
+    <div class="result">
+      <label>Lowest salary:</label>
+      <span id="lowest-salary"></span>
+    </div>
+
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>
