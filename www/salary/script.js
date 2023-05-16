@@ -44,6 +44,7 @@ const employees = {
   }
 };
 
+const employeesCopy = { ...employees };
 
 // Получаем ссылки на элементы страницы
 const calculateBtn = document.getElementById("calculate");
@@ -55,16 +56,16 @@ const lowestSalary = document.getElementById("lowest-salary");
 // Добавляем обработчик события на кнопку "Calculate"
 calculateBtn.addEventListener("click", function() {
 
-  employees["John Doe"] = Number(document.getElementById("john-doe").value);
-  employees["Jane Smith"] = Number(document.getElementById("jane-smith").value);
-  employees["Bob Johnson"] = Number(document.getElementById("bob-johnson").value);
-  employees["Alice Lee"] = Number(document.getElementById("alice-lee").value);
+  employeesCopy["John Doe"] = Number(document.getElementById("john-doe").value);
+  employeesCopy["Jane Smith"] = Number(document.getElementById("jane-smith").value);
+  employeesCopy["Bob Johnson"] = Number(document.getElementById("bob-johnson").value);
+  employeesCopy["Alice Lee"] = Number(document.getElementById("alice-lee").value);
 
   // Вычисляем результаты
-  const total = employees.totalSalary();
-  const average = employees.averageSalary();
-  const highest = employees.highestSalary();
-  const lowest = employees.lowestSalary();
+  const total = employeesCopy.totalSalary();
+  const average = employeesCopy.averageSalary();
+  const highest = employeesCopy.highestSalary();
+  const lowest = employeesCopy.lowestSalary();
 
   // Отображаем результаты на странице
   totalSalary.textContent = `$${total}`;
