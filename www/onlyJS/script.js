@@ -1,3 +1,6 @@
+//фавиконка квадрата
+favicon = document.getElementById('favicon').setAttribute('href', 'https://img.icons8.com/?size=512&id=EeuWKT8PLduA&format=png')
+
 const body = document.querySelector('body');
 //создаем контейнер [grid]
 const container = document.createElement('div');
@@ -60,13 +63,15 @@ block.addEventListener('click', () => {
   // Меняем форму блока на круг или квадрат в зависимости от его текущей формы
   if (isRound) {
     isRound = false;
-    block.classList.remove('round');
+    block.classList.remove('round');                                    //фавиконка квадрата
+    favicon = document.getElementById('favicon').setAttribute('href', 'https://img.icons8.com/?size=512&id=EeuWKT8PLduA&format=png')
     for (let i = 0; i < grid_item.length; i++) {
       grid_item[i].classList.remove('round');
     };
   } else {
     isRound = true;
-    block.classList.add('round');
+    block.classList.add('round');                                       //фавиконка круга
+    favicon = document.getElementById('favicon').setAttribute('href', 'https://img.icons8.com/?size=512&id=N-aPJN6VfRBa&format=png')
     for (let i = 0; i < grid_item.length; i++) {
       grid_item[i].classList.add('round') ;
     };
