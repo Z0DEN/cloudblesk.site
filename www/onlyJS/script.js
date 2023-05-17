@@ -50,11 +50,11 @@ button.addEventListener('click', () => {
 // Добавляем элемент на страницу
 body.appendChild(button);
 
-const grid_item = document.querySelectorAll('.grid-item')
+const grid_item = document.querySelectorAll('.grid-item');
 
 // Создаем квадратный блок
 const block = document.createElement('div');
-block.classList.add('fill')
+block.classList.add('fill');
 let isRound = false;
 block.addEventListener('click', () => {
   // Меняем форму блока на круг или квадрат в зависимости от его текущей формы
@@ -70,7 +70,7 @@ block.addEventListener('click', () => {
     for (let i = 0; i < grid_item.length; i++) {
       grid_item[i].classList.add('round') ;
     };
-  }
+  };
 });
 
 // Добавляем элемент на страницу
