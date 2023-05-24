@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: sans-serif;
+  background-color: rgba(0, 225, 255, 0.363);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.cloud {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.star {
+  position: absolute;
+  top: 50%;
+  left: 160%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background-image: url('https://img.icons8.com/?size=512&id=EhEaKbQpE5Qw&format=png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: data-packets-anim 2s infinite;
+  transform-origin: right bottom;
+}
+
+@keyframes data-packets-anim {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  animation: fade-in 0.5s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 0px solid;
+  border-radius: 5px;
+  background-color: #6adcf862;
+  font-size: 16px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+background-color: #fff;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+border: 1px solid;
+}
+
+button {
+display: block;
+width: 100%;
+padding: 10px;
+margin-top: 20px;
+border: none;
+border-radius: 5px;
+background-color: #2ecc71;
+color: #fff;
+font-size: 16px;
+font-weight: 500;
+cursor: pointer;
+transition: background-color 0.2s;
+}
+
+button:hover {
+background-color: #27ae60;
+}
+
+.loading-spinner {
+display: none;
+width: 20px;
+height: 20px;
+margin-top: 20px;
+}
+
+.spinner {
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 3px solid rgba(0, 0, 0, 0.3);
+border-radius: 50%;
+border-top-color: #2ecc71;
+animation: spin 1s ease-out infinite;
+}
+
+@keyframes spin {
+to {
+  transform: rotate(360deg);
+}
+}
+
+.confirmation-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 999;
+}
+
+.confirmation-panel {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+animation: fade-in 0.5s;
+}
+
+.close-panel {
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 20px;
+font-weight: bold;
+color: #999;
+background-color: transparent;
+border: none;
+cursor: pointer;
+transition: color 0.2s;
+}
+
+.close-panel:hover {
+color: #333;
+}
