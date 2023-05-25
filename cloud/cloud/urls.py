@@ -20,6 +20,5 @@ from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('cloud_api/', include('cloud_api.urls')),
-    path('/home/main/cloudblesk.site/www/sum', include('cloud_api.urls')),
+    path('cloud_api/', include('cloud_api.urls')),
 ]
