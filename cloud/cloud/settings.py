@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,6 +31,8 @@ ALLOWED_HOSTS = ['localhost','192.168.0.98','176.197.34.213','cloudblesk.site','
 
 
 # Application definition
+
+sys.path.append('/home/main/cloudblesk.site/www/sum')  # путь до приложения cloud_api
 
 INSTALLED_APPS = [
     'django.contrib.admin',
