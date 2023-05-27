@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost','192.168.0.98','176.197.34.213','cloudblesk.site','
 # Application definition
 
 sys.path.append('/home/main/cloudblesk.site/www/sum/')  # путь до приложения cloud_api
+sys.path.append('/home/main/cloudblesk.site/www/registration/')  # путь до приложения db
 
 INSTALLED_APPS = [
     'django.contrib.admin',

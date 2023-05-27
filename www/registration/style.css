@@ -94,89 +94,75 @@ input {
 }
 
 input:focus {
-background-color: #fff;
-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-border: 1px solid;
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	border: 1px solid;
+}
+
+.create {
+	margin-top: 20px;
 }
 
 button {
-display: block;
-width: 100%;
-padding: 10px;
-margin-top: 20px;
-border: none;
-border-radius: 5px;
-background-color: #2ecc71;
-color: #fff;
-font-size: 16px;
-font-weight: 500;
-cursor: pointer;
-transition: background-color 0.2s;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #2ecc71;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.2s;
 }
 
 button:hover {
-background-color: #27ae60;
-}
-
-.loading-spinner {
-display: none;
-width: 20px;
-height: 20px;
-margin-top: 20px;
-}
-
-.spinner {
-display: inline-block;
-width: 20px;
-height: 20px;
-border: 3px solid rgba(0, 0, 0, 0.3);
-border-radius: 50%;
-border-top-color: #2ecc71;
-animation: spin 1s ease-out infinite;
-}
-
-@keyframes spin {
-to {
-  transform: rotate(360deg);
-}
+	background-color: #27ae60;
 }
 
 .confirmation-overlay {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.5);
-z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .confirmation-panel {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: #fff;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-animation: fade-in 0.5s;
+	width: max-content;
+  position: relative;
+  background-color: rgba(46, 204, 113, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: fade-in 0.5s;
+  backdrop-filter: blur(10px);
+  display: flex;
+	flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	font-size: 150%;
 }
 
 .close-panel {
-position: absolute;
-top: 10px;
-right: 10px;
-font-size: 20px;
-font-weight: bold;
-color: #999;
-background-color: transparent;
-border: none;
-cursor: pointer;
-transition: color 0.2s;
+	margin: 2vh 0 0 0;
+	width: 100%;
+  position: relative;
+	font-size: 100%;
+  font-weight: bold;
+  color: #e0e0e0;
+  background-color: transparent;
+  border: 1px solid;
+  cursor: pointer;
+  transition: color 0.2s;
 }
 
 .close-panel:hover {
-color: #333;
+	color: #000000;
 }

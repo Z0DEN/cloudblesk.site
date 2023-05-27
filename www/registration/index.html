@@ -14,19 +14,16 @@
       </div>
       <form id="registration-form">
         <h2>Create an Account</h2>
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="password" name="password" placeholder="Password repeat">
-        <button type="submit">Create Account</button>
-        <div class="loading-spinner">
-          <div class="spinner"></div>
-        </div>
+        <input type="text" name="name" placeholder="Name" required id="name">
+        <input type="email" name="email" placeholder="Email Address" required id="email">
+        <input type="password" name="password" placeholder="Password" required id="password">
+        <input type="password" name="password" placeholder="Confirm password" required id="pass_confirm">
+        <button type="submit" class="create">Create Account</button>
       </form>
       <div class="confirmation-overlay">
         <div class="confirmation-panel">
           <h3>Thank you for registering!</h3>
-          <button class="close-panel">&times;</button>
+          <button class="close-panel">close</button>
         </div>
       </div>
     </div>

@@ -1,38 +1,62 @@
-const form = document.querySelector('form');
-const confirmation = document.createElement('div');
-confirmation.classList.add('confirmation');
-confirmation.textContent = 'Thank you for registering!';
+const registrationForm = document.querySelector('#registration-form');
+const confirmationOverlay = document.querySelector('.confirmation-overlay');
+const closePanelButton = document.querySelector('.close-panel');
 
-form.addEventListener('submit', (event) => {
+registrationForm.addEventListener('submit', (event) => {
   event.preventDefault();
-
-  const name = document.querySelector('#name');
-  const email= document.querySelector('#email');
-  const password = document.querySelector('#password');
-  let isValid = true;
-
-  if (name.value === '') {
-    name.setCustomValidity('Please enter your name');
-    isValid = false;
-  } else {
-    name.setCustomValidity('');
-  }
-
-  if (email.value === '') {
-    email.setCustomValidity('Please enter your email address');
-    isValid = false;
-  } else {
-    email.setCustomValidity('');
-  }
-
-  if (password.value === '') {
-    password.setCustomValidity('Please enter your password');
-    isValid = false;
-  } else {
-    password.setCustomValidity('');
-  }
-
-  if (isValid) {
-    form.appendChild(confirmation);
-  }
+  confirmationOverlay.style.display = 'flex'; 
+  DataGathering()
 });
+
+closePanelButton.addEventListener('click', () => {
+  confirmationOverlay.style.display = 'none';
+});
+
+
+function DataGathering(){
+const login = document.getElementById('name').value
+const email = document.getElementById('email').value
+const pass = document.getElementById('password').value
+const pass_conf = document.getElementById('pass_confirm').value
+if (pass_conf === pass){
+    createUserData(login, email, pass)
+}
+else{
+  alert("Пароли не совпадают")
+}
+}
+
+function createUserData(login, email, password){
+  const user = {
+    login: `${login}`,
+    email: `${email}`,
+    password: `${password}`
+  }
+  sendUserData(
+    JSON.stringify(user)
+  )
+}
+
+function sendUserData(user){
+  url = "/api/db"
+  fetch(url, {
+    method: 'POST',
+    body: user,
+    headers: {
+      'Content-type': 'application/json' 
+    }
+  })
+  .then(response => {
+    if (response.ok){
+      console.log('User created successfully');
+      // здесь можно добавить код, который будет выполнен после успешного создания пользователя
+    }
+    else{
+      console.error('Error creating user');
+      // здесь можно добавить код, который будет выполнен при ошибке создания пользователя
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  })
+}

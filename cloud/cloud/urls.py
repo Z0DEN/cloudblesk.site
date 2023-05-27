@@ -21,4 +21,5 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cloud_api/', include('cloud_api.urls')),
+    path('db/', include('db.urls')),
 ]
