@@ -17,7 +17,7 @@ def createUser(request):
 			return HttpResponse("User created successfully")
 	
 	else:
-		return HttpResponse("User have not created")
+		return HttpResponse("User has not been created")
 		
 
 

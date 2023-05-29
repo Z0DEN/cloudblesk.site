@@ -27,19 +27,20 @@ else{
 }
 }
 
-function createUserData(login, email, password){
+function createUserData(login, email, pass){
   const user = {
     login: `${login}`,
     email: `${email}`,
-    password: `${password}`
+    password: `${pass}`
   }
   sendUserData(
     JSON.stringify(user)
   )
 }
 
+
 function sendUserData(user){
-  const url = "https://cloudblesk.site/api/db/createUser"     //    /api/db/createUser
+  const url = "/api/db/createUser"     //    /api/db/createUser
   fetch(url, {
     method: 'POST',
     body: user,
