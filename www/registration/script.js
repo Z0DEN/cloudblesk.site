@@ -1,3 +1,23 @@
+const signupBtn = document.querySelector('.signup-btn')
+const loginBtn = document.querySelector('.login-btn')
+const signupForm = document.querySelector('#registration-form')
+const loginForm = document.querySelector('#login-form')
+
+signupBtn.addEventListener('click', () => {
+  loginForm.classList.add('disabled')
+  signupForm.classList.remove('disabled')
+  signupBtn.classList.add('disabled') 
+  loginBtn.classList.remove('disabled')
+})
+
+loginBtn.addEventListener('click', () => {
+  signupForm.classList.add('disabled')
+  loginForm.classList.remove('disabled')
+  loginBtn.classList.add('disabled') 
+  signupBtn.classList.remove('disabled')
+})
+
+
 const registrationForm = document.querySelector('#registration-form');
 const confirmationOverlay = document.querySelector('.confirmation-overlay');
 const closePanelButton = document.querySelector('.close-panel');

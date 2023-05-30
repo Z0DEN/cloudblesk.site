@@ -63,6 +63,7 @@ form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   animation: fade-in 0.5s;
+  position: absolute;
 }
 
 @keyframes fade-in {
@@ -115,6 +116,34 @@ button {
 	font-weight: 500;
 	cursor: pointer;
 	transition: background-color 0.2s;
+}
+
+form.disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-switch{
+  display: flex;
+  width: 100%;
+  max-width: 450px;
+  height: 6vh;
+  gap: 5vw;
+  padding-bottom: 15px;
+}
+
+.form-div{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.form-switch .disabled{
+  background-color: #3eff8ff5;
+  color: black;
+  border: 1px solid black;
 }
 
 button:hover {
