@@ -85,6 +85,18 @@ function sendUserData(user){
   })
 }
 
+function get_users(){
+  fetch('/api/db/user_list')
+      .then(response => response.json())
+      .then(data => {
+          console.log(data);
+      })
+      .catch(error => {
+          console.error(error);
+      });
+}
+
+
 // function getCookie(name) {
 //   let cookieValue = null;
 //   if (document.cookie && document.cookie !== '') {
