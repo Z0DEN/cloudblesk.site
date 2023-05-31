@@ -1,15 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-function App() {
-  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+function Counter() {
+  const [count, setCount] = useState(0);
 
+  function increment() {
+    setCount(count + 1);
+  }
+
+  function decrement() {
+    setCount(count - 1);
+  }
+  
   return (
-    <ul style={{ fontFamily: 'Arial', color: 'white', backgroundColor: 'blue' }}>
-      {items.map(item => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
   );
 }
 
-export default App;
+
+
+function Time() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const options = {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    timeZoneName: 'short'
+  };
+
+  const formattedTime = currentTime.toLocaleDateString('en-US', options);
+
+  return (
+    <div>
+      <p>{formattedTime}</p>
+    </div>
+  );
+}
+
+export { Time, Counter };

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Time, Counter} from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Time />, document.getElementById('Time'));
+ReactDOM.render(<Counter />, document.getElementById('Counter'));
