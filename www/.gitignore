@@ -1,6 +1,7 @@
 registration/db/__pycache__ 
 react/react_app/package.json 
-react/react_app/public src
+react/react_app/public 
+react/react_app/src
 react/react_app/node_modules  
 react/react_app/package-lock.json  
 react/react_app/README.md
