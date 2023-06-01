@@ -1,22 +1,32 @@
 html {
   --s: 500px; /* control the size */
-  --c1: #FF847C;
-  --c2: #E84A5F;
-  --c3: #FECEA8;
-  --c4: #99B898;
-  
-  background:
-    conic-gradient(from  45deg at 75% 75%, var(--c3) 90deg,var(--c1) 0 180deg,#0000 0),
-    conic-gradient(from -45deg at 25% 25%, var(--c3) 90deg,#0000 0),
-    conic-gradient(from -45deg at 50% 100%,#0000 180deg,var(--c3) 0),
-    conic-gradient(from -45deg,var(--c1) 90deg, var(--c2) 0 225deg,var(--c4) 0);
-  background-size: var(--s) var(--s); 
+  --c1: #ff847c;
+  --c2: #e84a5f;
+  --c3: #fecea8;
+  --c4: #99b898;
 
-
-  font-size: 200%;
+  background: conic-gradient(
+      from 45deg at 75% 75%,
+      var(--c3) 90deg,
+      var(--c1) 0 180deg,
+      #0000 0
+    ),
+    conic-gradient(from -45deg at 25% 25%, var(--c3) 90deg, #0000 0),
+    conic-gradient(from -45deg at 50% 100%, #0000 180deg, var(--c3) 0),
+    conic-gradient(
+      from -45deg,
+      var(--c1) 90deg,
+      var(--c2) 0 225deg,
+      var(--c4) 0
+    );
+  background-size: var(--s) var(--s);
 }
 
-body{
+#Counter, #Time{
+  font-size: 2rem;
+}
+
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +34,76 @@ body{
   /* gap: 200px; */
 }
 
-body > *{
+body > * {
   padding: 10vh;
+}
+
+
+.code-container{
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5vw;
+}
+
+h1{
+    background-color: #ff4c4c;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 1.2;
+    padding: 10px 20px;
+    text-shadow: 3px 3px 0 #b30000,
+                 4px 4px 0 #b30000,
+                 5px 5px 0 #b30000,
+                 6px 6px 0 #b30000,
+                 7px 7px 0 #b30000,
+                 8px 8px 0 #b30000,
+                 9px 9px 0 #b30000,
+                 10px 10px 0 #b30000;
+    -webkit-text-stroke: 2px white;
+
+    border-radius: 10px;
+}
+
+
+button {
+  background-color: #e84a5f;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #ff4d6d;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1),
+    0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+.indexjs, .appjs, .stylejs{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 500ms;
+}
+
+.appjs{
+  transition: all 800ms;
+}
+
+.appjs:hover, .indexjs:hover, .stylejs:hover{
+  grid-template-rows: 1fr;
 }

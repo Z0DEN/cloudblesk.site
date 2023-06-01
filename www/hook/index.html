@@ -1,1 +1,141 @@
-<!doctype html><html lang="en"><link rel="stylesheet" href="style.css"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="./logo192.png"/><link rel="manifest" href="./manifest.json"/><title>React App</title><script defer="defer" src="./static/js/main.e0d75151.js"></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="Counter"></div><div id="Time"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="style.css"/>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="./logo192.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <title>React App</title>
+    <script defer="defer" src="./static/js/main.7349aaa3.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="Counter"></div>
+    <div id="Time"></div>
+      <div class="code-container">
+        <div class="fix">
+          <h1>App.js</h1>
+          <div class="appjs">
+        <pre><code class="language-javascript">
+  import React, { useState, useEffect } from 'react';
+  import { styles } from './style'; 
+  
+  function Counter() {
+    const [count, setCount] = useState(0);
+    const [height, setHeight] = useState(400);
+    
+    function increment() {
+      setCount(count + 1);
+      setHeight(height + 20)
+    }
+    
+    function decrement() {
+      setCount(count - 1);
+      setHeight(height - 20)
+    }
+    
+    useEffect(() => {
+      document.documentElement.style.setProperty('--s', `${height}px`);
+    }, [height]);
+  
+    return (
+      <div style={styles.html}>  
+        <p>Count: {count}</p>
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+      </div>
+    );
+  }
+  
+  
+  function Time() {
+    const [currentTime, setCurrentTime] = useState(new Date());
+    const [color, setColor] = useState('red');
+  
+    useEffect(() => {
+      const timer = setInterval(() => {
+        const colors = [
+          'crimson',
+          'darkred',
+          'orangered',
+          'coral',
+          'khaki',
+          'lime',
+          'teagreen',
+          'dodgerblue',
+          'purple',
+          'pink',
+          'black',
+        ];
+        
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        setColor(randomColor);
+        setCurrentTime(new Date());
+      }, 1000);
+  
+      return () => clearInterval(timer);
+    }, []);
+  
+    const options = {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      timeZoneName: 'short'
+    };
+  
+    const formattedTime = currentTime.toLocaleDateString('en-US', options);
+  
+    return (
+      <div>
+        <p style={{ color: color, transition: 'all 1s ease-in-out'}}>{formattedTime}</p>
+      </div>
+    );
+  }
+  
+  export { Time, Counter };
+      </code></pre>
+    </div>
+    </div>
+    <div class="fix">
+    <h1>index.js</h1>
+    <div class="indexjs">
+      <pre><code class="language-javascript">
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import { Time, Counter} from './App';
+
+  ReactDOM.render(<Time />, document.getElementById('Time'));
+  ReactDOM.render(<Counter />, document.getElementById('Counter'));
+
+      </code></pre>
+    </div>
+    </div>
+    <div class="fix">
+    <h1>style.js</h1>
+    <div class="stylejs">
+      <pre><code class="language-javascript">
+  export const styles = {
+    html: {
+      '--s': '800px',
+    }
+  };
+      </code></pre>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>
