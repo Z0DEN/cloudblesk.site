@@ -1,80 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import { styles } from './style'; 
+import React from 'react';
 
-function Counter() {
-  const [count, setCount] = useState(0);
-  const [height, setHeight] = useState(400);
-  
-  function increment() {
-    setCount(count + 1);
-    setHeight(height + 20)
-  }
-  
-  function decrement() {
-    setCount(count - 1);
-    setHeight(height - 20)
-  }
-  
-  useEffect(() => {
-    document.documentElement.style.setProperty('--s', `${height}px`);
-  }, [height]);
-
+const Hero1stTask = () => {
   return (
-    <div style={styles.html}>  
-      <p>Count: {count}</p>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
+    <div className="hero">
+      <h1>Добро пожаловать в наш магазин</h1>
+      <p>Начать покупки!</p>
     </div>
   );
-}
+};
 
 
-function Time() {
-  const [currentTime, setCurrentTime] = useState(new Date());
-  const [color, setColor] = useState('red');
+const Hero2ndTask = () => {
+  return (
+    <div className="hero">
+      <h1 className="title">Supermarket</h1>
+      <p>Start shopping</p>
+    </div>
+  );
+};
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const colors = [
-        'crimson',
-        'darkred',
-        'orangered',
-        'coral',
-        'khaki',
-        'lime',
-        'teagreen',
-        'dodgerblue',
-        'purple',
-        'pink',
-        'black',
-      ];
-      
-      const randomColor = colors[Math.floor(Math.random() * colors.length)];
-      setColor(randomColor);
-      setCurrentTime(new Date());
-    }, 1000);
 
-    return () => clearInterval(timer);
-  }, []);
+const Welcome = ({ name }) => {
+  return (
+    <h1 className="welcome_h1">Привет, {name}!</h1>
+  );
+};
 
-  const options = {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    timeZoneName: 'short'
+const App = () => {
+  const [names, setNames] = React.useState([]);
+
+  const handleAddName = () => {
+    const newName = prompt('Введите имя:');
+    if (newName) {
+      setNames([...names, newName]);
+    }
   };
 
-  const formattedTime = currentTime.toLocaleDateString('en-US', options);
-
   return (
-    <div>
-      <p style={{ color: color, transition: 'all 1s ease-in-out'}}>{formattedTime}</p>
-    </div>
+    <>
+      <button onClick={handleAddName}>Добавить имя</button>
+      {names.map((name, index) => (
+        <Welcome key={index} name={name} />
+      ))}
+    </>
   );
-}
+};
 
-export { Time, Counter };
+
+export { Hero1stTask, Hero2ndTask, App };
