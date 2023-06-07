@@ -1,12 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Hero1stTask, Hero2ndTask, App } from './App';
+import { createRoot } from 'react-dom';
+import { UploadImage } from './App';
 
-ReactDOM.render(
-  <div>
-    <Hero1stTask />
-    <Hero2ndTask />
-    <App />
-  </div>, 
-  document.getElementById('root')
-);
+createRoot(document.getElementById('root')).render(<UploadImage />);
