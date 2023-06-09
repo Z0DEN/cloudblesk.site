@@ -1,5 +1,11 @@
-import React from 'react';
-import { createRoot } from 'react-dom';
-import { UploadImage } from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { UploadImage } from "./App";
 
-createRoot(document.getElementById('root')).render(<UploadImage />);
+const rootElement = document.getElementById("root");
+
+ReactDOM.createRoot(rootElement).render(
+  <>
+    <UploadImage />
+  </>
+);

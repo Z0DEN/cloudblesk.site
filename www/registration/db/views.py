@@ -1,10 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from PIL import Image
+from django.core.files.base import ContentFile
+from django.http import JsonResponse
+from django.http import HttpResponse
+from django.shortcuts import render
 from datetime import datetime
 from .models import User
+from PIL import Image
 import json
 
 
@@ -24,27 +25,40 @@ def createUser(request):
 		
 
 
+@csrf_exempt
 def process_image(request):
     if request.method == 'POST':
-        image_file = request.FILES['image']
-        image = Image.open(image_file)
-        
-        pixels_array = []
-        pixels = image.load()
-        for i in range(image.width):
-            for j in range(image.height):
-                color = pixels[i, j]
-                pixels_array.append(color)
-                
-        response_data = {'pixels': pixels_array}
-        return JsonResponse(response_data)
+        image_file = request.FILES.get('file')
+        if image_file:
+            # Open the image file using Pillow
+            image = Image.open(image_file)
+
+            # Get the width and height of the image
+            # width, height = image.size
+
+            # pixels = []
+
+            # pixels = list(image.getdata())
+            pixels = [list(pixel) for pixel in image.getdata()]
 
 
-# @csrf_exempt
-# def user_list(request):
-#     users = User.objects.all().values()
-#     data_list = list(users)
-#     return JsonResponse(data_list, safe=False)
+            # Return the list of pixels as a JSON response
+            return JsonResponse(pixels, safe=False)
+        else:
+            # Return an error response if there is no image file
+            return JsonResponse({'error': 'No image file provided'}, status=400)
+    else:
+        # Return an error response for non-POST requests
+        return JsonResponse({'error': 'Unsupported request method'}, status=405)
+
+
+
+
+@csrf_exempt
+def user_list(request):
+    users = User.objects.all().values()
+    data_list = list(users)
+    return JsonResponse(data_list, safe=False)
 
 
 # def cookieSet(request):
