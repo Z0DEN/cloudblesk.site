@@ -6,7 +6,17 @@ function UploadImage() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imageWidth, setImageWidth] = useState(null);
   const [imageHeight, setImageHeight] = useState(null);
-  const [gridData, setGridData] = useState("gridData"); // новое состояние для данных сетки
+  const [gridPixelSize, setGridPixelSize] = useState(4);
+  const [imgPixelSize, setImgPixelSize] = useState(4);
+  const [gridData, setGridData] = useState(null);
+
+  const handleGridPixelSizeChange = (event) => {
+    setGridPixelSize(event.target.value);
+  };
+
+  const handleImgPixelSizeChange = (event) => {
+    setImgPixelSize(event.target.value);
+  };
 
   const handleFileInputChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -20,6 +30,14 @@ function UploadImage() {
         setImageHeight(img.height);
       };
       img.src = URL.createObjectURL(selectedFile);
+      const reader = new FileReader();
+      reader.onload = () => {
+        const imagePreview = document.getElementById("image-preview");
+        if (imagePreview) {
+          imagePreview.src = reader.result;
+        }
+      };
+      reader.readAsDataURL(selectedFile);
     }
   }, [selectedFile]);
 
@@ -38,18 +56,37 @@ function UploadImage() {
         },
       })
       .then((response) => {
-        setGridData(response.data); // сохраняем данные в новом состоянии
+        setGridData(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
+  const handleUploadButtonClick = () => {
+    document.getElementById("file-input").click();
+  };
+
   return (
     <div>
-      <input type="file" onChange={handleFileInputChange} />
-      <button onClick={handleSubmit}>Отправить</button>
-      <Grid height={imageHeight} width={imageWidth} Obj={gridData} />
+      <div id="drop-zone" onClick={handleUploadButtonClick}>
+      {selectedFile && <img id="image-preview" src="" alt="Preview" />}
+        {!selectedFile && <h3>Перетащите изображение сюда или кликните, чтобы выбрать файл</h3>}
+        <span>{selectedFile && selectedFile.name}</span>
+        <input type="file" id="file-input" accept="image/*" className="inputFile" onChange={handleFileInputChange}></input>
+      </div>  
+      <button className="sendBtn" onClick={handleSubmit}>Отправить</button>
+      <div className="SettingsDiv">
+        <span>
+          <label htmlFor="grid-pixel-size">Размер пикселя "grid" сетки: {gridPixelSize} </label>
+          <input type="range" id="grid-pixel-size" name="grid-pixel-size" min="4" max="50" value={gridPixelSize} onChange={handleGridPixelSizeChange} />
+        </span>
+        <span>
+          <label htmlFor="img-pixel-size">Размер пикселя изображения: {imgPixelSize} </label>
+          <input type="range" id="img-pixel-size" name="img-pixel-size" min="4" max="50" value={imgPixelSize} onChange={handleImgPixelSizeChange} />
+        </span>
+      </div>
+      {gridData && <Grid height={imageHeight} width={imageWidth} Obj={gridData} GridSize={gridPixelSize} ImgSize={imgPixelSize} />}
     </div>
   );
 }
