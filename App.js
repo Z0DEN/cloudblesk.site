@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Grid from "./Grid";
-import { explode } from './explode';
 
 function UploadImage() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -100,9 +99,6 @@ function UploadImage() {
         />
         Лагающее появление???
         </label>
-        </span>
-        <span>
-          <button className="sendBtn" onClick={explode}>Exterminate!!!</button>
         </span>
       </div>
       {gridData && <Grid height={imageHeight} width={imageWidth} Obj={gridData} GridSize={gridPixelSize} ImgSize={imgPixelSize} isChecked={isChecked}/>}

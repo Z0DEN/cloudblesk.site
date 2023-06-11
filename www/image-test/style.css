@@ -151,7 +151,7 @@ button {
 
 .GridSpan:hover {
   scale: 1000%;
-} 
+}
 
 .grid-span-animation {
   -webkit-animation: slide-in-blurred-top 0.3s cubic-bezier(0.23, 1, 0.32, 1)
