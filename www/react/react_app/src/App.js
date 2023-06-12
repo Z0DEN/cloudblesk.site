@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Grid from "./Grid";
-import { explode } from './explode';
 
 function UploadImage() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -11,8 +10,18 @@ function UploadImage() {
   const [imgPixelSize, setImgPixelSize] = useState(4);
   const [gridData, setGridData] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
+  const [delayScreenUpdate, setdelayScreenUpdate] = useState(0.05);
+  const [isScreenUpdChecked, setIsScreenUpdChecked] = useState(false);
 
-  function handleCheckboxChange(event) {
+  const handleScreenUpdate = (event) => {
+    setdelayScreenUpdate(event.target.value);
+  }
+
+  const handleDelayScreenUpdate = (event) => {
+    setIsScreenUpdChecked(event.target.checked);
+  };
+
+  const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
   }
 
@@ -92,6 +101,10 @@ function UploadImage() {
           <input type="range" id="img-pixel-size" name="img-pixel-size" min="4" max={gridPixelSize} value={imgPixelSize} onChange={handleImgPixelSizeChange} />
         </span>
         <span>
+          <label htmlFor="ScreenUpdate">Частота обновления: {delayScreenUpdate} </label>
+          <input type="range" id="ScreenUpdate" name="ScreenUpdate" min="0.005" max="0.1" step="0.005" value={delayScreenUpdate} onChange={handleScreenUpdate} />
+        </span>
+        <span>
         <label>
         <input
           type="checkbox"
@@ -101,11 +114,11 @@ function UploadImage() {
         Лагающее появление???
         </label>
         </span>
-        <span>
+        {/* <span>
           <button className="sendBtn" onClick={explode}>Exterminate!!!</button>
-        </span>
+        </span> */}
       </div>
-      {gridData && <Grid height={imageHeight} width={imageWidth} Obj={gridData} GridSize={gridPixelSize} ImgSize={imgPixelSize} isChecked={isChecked}/>}
+      {gridData && <Grid height={imageHeight} width={imageWidth} Obj={gridData} GridSize={gridPixelSize} ImgSize={imgPixelSize} isChecked={isChecked} delay={delayScreenUpdate}/>}
     </div>
   );
 }
