@@ -1,5 +1,6 @@
-function explode () {
-  const particles = document.querySelectorAll(".GridSpan");
+const particles = document.querySelectorAll(".GridSpan");
+
+function explode() {
   particles.forEach((particle) => {
     particle.style.setProperty(
       "--x", 
