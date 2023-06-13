@@ -104,7 +104,6 @@ button {
   flex-direction: column;
   user-select: none;
   padding: 0 0 0 2vw;
-  animation: explode 1s ease-out forwards;
 }
 
 .GRID {
@@ -197,7 +196,7 @@ button {
   }
 }
 
-@keyframes explode {
+@keyframes screenUpdate {
   from {
     opacity: 1;
     transform: translate3d(0, 0, 0);

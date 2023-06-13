@@ -1,4 +1,4 @@
-const Grid = ({ height, width, Obj, GridSize, ImgSize, isChecked}) => {
+const Grid = ({ height, width, Obj, GridSize, ImgSize, isChecked, delay}) => {
   const colors = Object.values(Obj);
 
   return (
@@ -17,7 +17,7 @@ const Grid = ({ height, width, Obj, GridSize, ImgSize, isChecked}) => {
        backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})`,
        width: `${ImgSize}px`,
        height: `${ImgSize}px`,
-       animationDelay: `${index * 0.001}s` // задержка каждого спана на 1 мс
+       animationDelay: `${index * delay}s`,
      }}
      onAnimationEnd={() => {
        // удаление класса анимации после окончания анимации
@@ -25,7 +25,7 @@ const Grid = ({ height, width, Obj, GridSize, ImgSize, isChecked}) => {
        element.classList.remove("grid-span-animation");
      }}
      id={`grid-span-${index}`} // уникальный идентификатор для каждого спана
-     className={isChecked ? ("GridSpan grid-span-animation") : ("GridSpan")}  // добавление класса анимации
+     className={(isChecked ? ("GridSpan grid-span-animation") : ("GridSpan"))}  // добавление класса анимации
    ></span>
  ))}
     </div>

@@ -1,4 +1,4 @@
-const Grid = ({ height, width, Obj, GridSize, ImgSize, isChecked, isSUC, delay}) => {
+const Grid = ({ height, width, Obj, GridSize, ImgSize, isChecked, delay}) => {
   const colors = Object.values(Obj);
 
   return (

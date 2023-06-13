@@ -36,9 +36,6 @@ def process_image(request):
             # Get the width and height of the image
             # width, height = image.size
 
-            # pixels = []
-
-            # pixels = list(image.getdata())
             pixels = [list(pixel) for pixel in image.getdata()]
 
 

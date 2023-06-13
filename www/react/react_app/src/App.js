@@ -11,15 +11,10 @@ function UploadImage() {
   const [gridData, setGridData] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
   const [delayScreenUpdate, setdelayScreenUpdate] = useState(0.05);
-  const [isScreenUpdChecked, setIsScreenUpdChecked] = useState(false);
 
   const handleScreenUpdate = (event) => {
     setdelayScreenUpdate(event.target.value);
   }
-
-  const handleDelayScreenUpdate = (event) => {
-    setIsScreenUpdChecked(event.target.checked);
-  };
 
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
@@ -114,9 +109,6 @@ function UploadImage() {
         Лагающее появление???
         </label>
         </span>
-        {/* <span>
-          <button className="sendBtn" onClick={explode}>Exterminate!!!</button>
-        </span> */}
       </div>
       {gridData && <Grid height={imageHeight} width={imageWidth} Obj={gridData} GridSize={gridPixelSize} ImgSize={imgPixelSize} isChecked={isChecked} delay={delayScreenUpdate}/>}
     </div>
