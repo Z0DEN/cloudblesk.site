@@ -11,8 +11,8 @@ const Form = () => {
 
   const GP_pic = "https://chakiris.club/uploads/posts/2023-01/1674776913_chakiris-club-p-litso-garri-pottera-krasivo-1.jpg"
   const RH_pic = "https://tviv.ru/wp-content/uploads/2018/07/Silicon-Valley.jpg"
-  const LS_pic = "https://static.wikia.nocookie.net/rustarwars/images/d/d9/Luke-rotjpromo.jpg/revision/latest?cb=20061127144734"
-  const EA_pic = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgJxLGiCL9VPw5h_2CU2vPSHVUA4E69uoj3uPuCnhM&s"
+  const TBL_pic = "https://avatars.dzeninfra.ru/get-zen_doc/1612125/pub_5fbf956a4b9b1b331de71378_5fbf9574d81aaf181b98ca7e/scale_1200"
+  const EA_pic = "https://i1.sndcdn.com/avatars-000239937625-wn66b5-t500x500.jpg"
 
   async function createImage(data) {
     console.log("start create image")
@@ -53,14 +53,15 @@ const Form = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    document.getElementById("loadingIndicator").style.opacity = "100%" 
+    document.getElementById("loadingIndicator").style.opacity = "100%"
+    document.getElementById("image-container").style.zIndex = "99"
     const data = {
       "template": "4KnlWBbK10p45OQGgm",
       "project_id": "vWnx7pMbLRkzJGLVmE",
       "modifications": [
         {
           "name": "face",
-          "image_url": character === "Harry Potter" ? `${GP_pic}` : character === "Richard Hendricks" ? `${RH_pic}` : character === "Luke Skywalker" ? `${LS_pic}`: character === "Elliot Alderson" ? `${EA_pic}`: ``,
+          "image_url": character === "Harry Potter" ? `${GP_pic}` : character === "Richard Hendricks" ? `${RH_pic}` : character === "Tim Berners-Lee" ? `${TBL_pic}`: character === "Elliot Alderson" ? `${EA_pic}`: ``,
         },
         {
           "name": "character_message",
@@ -70,7 +71,7 @@ const Form = () => {
         },
         {
           "name": "from",
-          "text": "from",
+          "text": "from:",
           "color": null,
           "background": null
         },
@@ -106,14 +107,22 @@ const Form = () => {
     const imageUid = await createImage(data);
     const imageLink = await getImageUrl(imageUid);
     setImageUrl(imageLink)
-    document.getElementById("loadingIndicator").style.opacity = "0%" 
+    document.getElementById("loadingIndicator").style.opacity = "0%"
+    setInterval(() => {
+      window.location.reload();
+    }, 30000);
   }
    
   const handleCancel = () => {
     setShowForm(false);
   };
-
+  
   return (
+    <div>
+    <div id="image-container">
+        <span id="loadingIndicator"></span>
+        {imageUrl && <img src={imageUrl} alt="" />}
+    </div>
     <div className="container">
       {!showForm ? (
         <button className="btn btn-primary" onClick={() => setShowForm(true)}>
@@ -153,7 +162,7 @@ const Form = () => {
             </select>
           </div>
           <div className="form-group">
-            <label>Какого из персонажей ты бы выбрал:</label>
+            <label>Кого из персонажей ты бы выбрал:</label>
             <select
               className="form-control"
               value={character}
@@ -162,7 +171,7 @@ const Form = () => {
               <option value="">Выберите персонажа</option>
               <option value="Harry Potter">Гарри Поттер</option>
               <option value="Richard Hendricks">Ричард Хендрикс</option>
-              <option value="Luke Skywalker">Люк Скайуокер</option>
+              <option value="Tim Berners-Lee">Тим Бернерс Ли</option>
               <option value="Elliot Alderson">Эллиот Алдерсон</option>
             </select>
           </div>
@@ -176,10 +185,9 @@ const Form = () => {
           >
             Отмена
           </button>
-          <span id="loadingIndicator"></span>
         </form>
       )}
-      {imageUrl && <img src={imageUrl} alt="" />}
+    </div>
     </div>
   );
 };
