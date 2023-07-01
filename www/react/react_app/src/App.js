@@ -53,6 +53,7 @@ const Form = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    document.getElementById("loadingIndicator").style.opacity = "100%" 
     const data = {
       "template": "4KnlWBbK10p45OQGgm",
       "project_id": "vWnx7pMbLRkzJGLVmE",
@@ -105,6 +106,7 @@ const Form = () => {
     const imageUid = await createImage(data);
     const imageLink = await getImageUrl(imageUid);
     setImageUrl(imageLink)
+    document.getElementById("loadingIndicator").style.opacity = "0%" 
   }
    
   const handleCancel = () => {
@@ -169,14 +171,15 @@ const Form = () => {
           </button>
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-secondary cancel"
             onClick={handleCancel}
           >
             Отмена
           </button>
+          <span id="loadingIndicator"></span>
         </form>
       )}
-      {imageUrl && <img src={imageUrl} alt="Сгенерированное изображение" />}
+      {imageUrl && <img src={imageUrl} alt="" />}
     </div>
   );
 };
