@@ -1,118 +1,73 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Grid from "./Grid";
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function UploadImage() {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [imageWidth, setImageWidth] = useState(null);
-  const [imageHeight, setImageHeight] = useState(null);
-  const [gridPixelSize, setGridPixelSize] = useState(4);
-  const [imgPixelSize, setImgPixelSize] = useState(4);
-  const [gridData, setGridData] = useState(null);
-  const [isChecked, setIsChecked] = useState(false);
-  const [delayScreenUpdate, setdelayScreenUpdate] = useState(0.05);
-
-  const handleScreenUpdate = (event) => {
-    setdelayScreenUpdate(event.target.value);
-  }
-
-  const handleCheckboxChange = (event) => {
-    setIsChecked(event.target.checked);
-  }
-
-  const handleGridPixelSizeChange = (event) => {
-    setGridPixelSize(event.target.value);
-  };
-
-  const handleImgPixelSizeChange = (event) => {
-    setImgPixelSize(event.target.value);
-  };
-
-  const handleFileInputChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
-
-  useEffect(() => {
-    if (selectedFile) {
-      const img = new Image();
-      img.onload = () => {
-        setImageWidth(img.width);
-        setImageHeight(img.height);
-      };
-      img.src = URL.createObjectURL(selectedFile);
-      const reader = new FileReader();
-      reader.onload = () => {
-        const imagePreview = document.getElementById("image-preview");
-        if (imagePreview) {
-          imagePreview.src = reader.result;
-        }
-      };
-      reader.readAsDataURL(selectedFile);
-    }
-  }, [selectedFile]);
-
-  const handleSubmit = () => {
-    if (!selectedFile) {
-      console.log("No file selected");
-      return;
-    }
-    const formData = new FormData();
-    formData.append("file", selectedFile);
-
-    axios
-      .post("/api/db/process_image", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((response) => {
-        setGridData(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const handleUploadButtonClick = () => {
-    document.getElementById("file-input").click();
+const Form = () => {
+  const [showForm, setShowForm] = useState(false);
+  
+  const handleCancel = () => {
+    setShowForm(false);
   };
 
   return (
-    <div>
-      <div id="drop-zone" onClick={handleUploadButtonClick}>
-      {selectedFile && <img id="image-preview" src="" alt="Preview" />}
-        {!selectedFile && <h3>Перетащите изображение сюда или кликните, чтобы выбрать файл</h3>}
-        <span>{selectedFile && selectedFile.name}</span>
-        <input type="file" id="file-input" accept="image/*" className="inputFile" onChange={handleFileInputChange}></input>
-      </div>  
-      <button className="sendBtn" onClick={handleSubmit}>Отправить</button>
-      <div className="SettingsDiv">
-        <span>
-          <label htmlFor="grid-pixel-size">Размер пикселя "grid" сетки: {gridPixelSize} </label>
-          <input type="range" id="grid-pixel-size" name="grid-pixel-size" min="4" max="50" value={gridPixelSize} onChange={handleGridPixelSizeChange} />
-        </span>
-        <span>
-          <label htmlFor="img-pixel-size">Размер пикселя изображения: {imgPixelSize} </label>
-          <input type="range" id="img-pixel-size" name="img-pixel-size" min="4" max={gridPixelSize} value={imgPixelSize} onChange={handleImgPixelSizeChange} />
-        </span>
-        <span>
-          <label htmlFor="ScreenUpdate">Частота обновления: {delayScreenUpdate} </label>
-          <input type="range" id="ScreenUpdate" name="ScreenUpdate" min="0.005" max="0.1" step="0.005" value={delayScreenUpdate} onChange={handleScreenUpdate} />
-        </span>
-        <span>
-        <label>
-        <input
-          type="checkbox"
-          checked={isChecked}
-          onChange={handleCheckboxChange}
-        />
-        Лагающее появление???
-        </label>
-        </span>
-      </div>
-      {gridData && <Grid height={imageHeight} width={imageWidth} Obj={gridData} GridSize={gridPixelSize} ImgSize={imgPixelSize} isChecked={isChecked} delay={delayScreenUpdate}/>}
+    <div className="container">
+      {!showForm ? (
+        <button className="btn btn-primary" onClick={() => setShowForm(true)}>
+          Показать форму
+        </button>
+      ) : (
+        <form onSubmit="handleSubmit()">
+          <div className="form-group">
+            <label>Имя:</label>
+            <input
+              type="text"
+              className="form-control"
+            />
+          </div>
+          <div className="form-group">
+            <label>Возраст:</label>
+            <input
+              type="number"
+              className="form-control"
+            />
+          </div>
+          <div className="form-group">
+            <label>Родной город:</label>
+            <select
+              className="form-control"
+            >
+              <option value="">Выберите город</option>
+              <option value="Москва">Москва</option>
+              <option value="Санкт-Петербург">Санкт-Петербург</option>
+              <option value="Киев">Киев</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label>Какого из персонажей ты бы выбрал:</label>
+            <select
+              className="form-control"
+            >
+              <option value="">Выберите персонажа</option>
+              <option value="GP">Гарри Поттер</option>
+              <option value="RH">Ричард Хендрикс</option>
+              <option value="LS">Люк Скайуокер</option>
+              <option value="EA">Эллиот Алдерсон</option>
+            </select>
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Отправить
+          </button>
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={handleCancel}
+          >
+            Отмена
+          </button>
+          <img alt="Сгенерированное изображение" />
+        </form>
+      )}
     </div>
   );
-}
+};
 
-export { UploadImage };
+export { Form };
