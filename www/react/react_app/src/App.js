@@ -9,7 +9,7 @@ const Form = () => {
   const [character, setCharacter] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
-  const GP_pic = "https://chakiris.club/uploads/posts/2023-01/1674776913_chakiris-club-p-litso-garri-pottera-krasivo-1.jpg"
+  const Em_pic = "https://cloudblesk.site/img/Em.jpg"
   const RH_pic = "https://tviv.ru/wp-content/uploads/2018/07/Silicon-Valley.jpg"
   const TBL_pic = "https://avatars.dzeninfra.ru/get-zen_doc/1612125/pub_5fbf956a4b9b1b331de71378_5fbf9574d81aaf181b98ca7e/scale_1200"
   const EA_pic = "https://i1.sndcdn.com/avatars-000239937625-wn66b5-t500x500.jpg"
@@ -55,13 +55,14 @@ const Form = () => {
     event.preventDefault();
     document.getElementById("loadingIndicator").style.opacity = "100%"
     document.getElementById("image-container").style.zIndex = "99"
+    document.getElementById("image-container").style.backdropFilter = "blur(10px)"
     const data = {
       "template": "4KnlWBbK10p45OQGgm",
       "project_id": "vWnx7pMbLRkzJGLVmE",
       "modifications": [
         {
           "name": "face",
-          "image_url": character === "Harry Potter" ? `${GP_pic}` : character === "Richard Hendricks" ? `${RH_pic}` : character === "Tim Berners-Lee" ? `${TBL_pic}`: character === "Elliot Alderson" ? `${EA_pic}`: ``,
+          "image_url": character === "Eminem" ? `${Em_pic}` : character === "Richard Hendricks" ? `${RH_pic}` : character === "Tim Berners-Lee" ? `${TBL_pic}`: character === "Elliot Alderson" ? `${EA_pic}`: ``,
         },
         {
           "name": "character_message",
@@ -169,7 +170,7 @@ const Form = () => {
               onChange={(e) => setCharacter(e.target.value)}
             >
               <option value="">Выберите персонажа</option>
-              <option value="Harry Potter">Гарри Поттер</option>
+              <option value="Eminem">Eminem</option>
               <option value="Richard Hendricks">Ричард Хендрикс</option>
               <option value="Tim Berners-Lee">Тим Бернерс Ли</option>
               <option value="Elliot Alderson">Эллиот Алдерсон</option>

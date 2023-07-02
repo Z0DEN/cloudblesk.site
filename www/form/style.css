@@ -1,4 +1,13 @@
-#loadingIndicator{
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://cloudblesk.site/registration/background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#loadingIndicator {
   position: absolute;
   display: inline-block;
   background-image: url("https://img.icons8.com/?size=512&id=EhEaKbQpE5Qw&format=png");
@@ -14,8 +23,7 @@
   z-index: 999;
 }
 
-
-@keyframes loadingAnimation{
+@keyframes loadingAnimation {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
     filter: hue-rotate(0deg);
@@ -26,25 +34,24 @@
   }
 }
 
-.cancel{
-  margin-left: 1vw; 
+.cancel {
+  margin-left: 1vw;
 }
 
-.btn{
-  margin-top: 1.5vh; 
+.btn {
+  margin-top: 1.5vh;
 }
 
-img{
+img {
   pointer-events: none;
 }
 
-#image-container{
+#image-container {
   display: flex;
   position: absolute;
   width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
   z-index: -99;
 }
