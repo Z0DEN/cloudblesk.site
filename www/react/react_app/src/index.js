@@ -1,11 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { Form } from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Navigation from './App';
 
-const rootElement = document.getElementById("root");
+const MyApp = () => {
+  return (
+    <Router>
+      <Navigation />
+    </Router>
+  );
+};
 
-ReactDOM.createRoot(rootElement).render(
-  <>
-    <Form />
-  </>
-);
+ReactDOM.render(<MyApp />, document.getElementById('root'));

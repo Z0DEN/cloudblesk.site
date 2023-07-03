@@ -5,10 +5,10 @@
 }
 
 body {
-  background-color: #f5f5f5;
   font-family: sans-serif;
+  background-color: #f5f5f5;
   background-color: rgba(0, 225, 255, 0.363);
-  background-image: url('./background.png');
+  background-image: url("../img/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
