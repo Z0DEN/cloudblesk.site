@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from django.urls import reverse_lazy
 from pathlib import Path
 import os
 import sys
@@ -32,35 +33,36 @@ ALLOWED_HOSTS = ['localhost','192.168.0.98','176.197.34.213','cloudblesk.site','
 
 # Application definition
 
+sys.path.append('/home/main/cloudblesk.site/www/registration-old/')  # путь до приложения db
 sys.path.append('/home/main/cloudblesk.site/www/sum/')  # путь до приложения cloud_api
-sys.path.append('/home/main/cloudblesk.site/www/registration/')  # путь до приложения db
+sys.path.append('/home/main/cloudblesk.site/www/')  # путь до приложения registration
 
 INSTALLED_APPS = [
-    'corsheaders',
-    'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.staticfiles',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'cloud_api',
-    'db',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'registration',     # приложение registration
+    'corsheaders',
+    'cloud_api',        # приложение cloud_api
+    'db',               # приложение db
 ]
 
 MIDDLEWARE = [
+    'django.contrib.sessions.middleware.SessionMiddleware',     # 1 хуйня
+    'django.contrib.messages.middleware.MessageMiddleware',     # 2 хуйня
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # 3 хуйня
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [
     "https://cloudblesk.site",
-    # Добавьте сюда другие разрешенные домены
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True
@@ -74,10 +76,10 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.request',
+                'django.template.context_processors.debug',
             ],
         },
     },
@@ -93,8 +95,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django_project',
-        'USER': 'django_user',
         'PASSWORD': 'djangoisme',
+        'USER': 'django_user',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -143,3 +145,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+LOGIN_REDIRECT_URL = reverse_lazy("registration:profile")
