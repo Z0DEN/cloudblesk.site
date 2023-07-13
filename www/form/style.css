@@ -1,8 +1,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-image: url("https://cloudblesk.site/registration/background.png");
-  background-position: center;
+  background-image: url("https://cloudblesk.site/img/background.png");
   background-repeat: no-repeat;
   background-size: cover;
 }

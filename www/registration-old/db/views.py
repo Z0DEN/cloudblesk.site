@@ -11,18 +11,17 @@ import json
 
 @csrf_exempt
 def createUser(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        user = User.objects.create(
-            login=data['login'],
-            email=data['email'],
-            password=data['password'],
-            reg_date=datetime.now(),
-        )
+    # Allow only POST requests
+    if request.method != 'POST':
+        return JsonResponse({'success': False, 'message': 'Invalid request method'}, status=405)
+
+    # Parse request data as JSON
+    try:
+        data = request.POST.dict()
+        user = User.objects.create(**data)
         return JsonResponse({'success': True, 'message': 'User was created successfully'})
-    else:
-        return JsonResponse({'success':False, 'message': 'Invalid request method'})
-		
+    except Exception:
+        return JsonResponse({'success': False, 'message': 'Invalid data provided'}, status=400)
 
 
 @csrf_exempt
