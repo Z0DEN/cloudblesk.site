@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Cloud Storage</title>
-    <link id="favicon" rel="icon" type="image/x-icon" href="https://img.icons8.com/?size=512&id=21754&format=png">
+    <link id="favicon" rel="icon" type="image/x-icon" href="https://cloudblesk.site/img/CloudFavicon.png">
     <link rel="stylesheet" type="text/css" href="{% static 'css/reg.css' %}">
     <script src="{% static 'js/reg.js' %}" defer="defer"></script>
   </head>
@@ -18,7 +18,8 @@
         <button class="login-btn">Log In</button>
       </div>
       <div class="form-div">
-        <form id="registration-form" class="disabled">
+        <form id="registration-form" class="disabled" method="post">
+          {% csrf_token %}
           <h2>Create an Account</h2>
           <input type="text" name="name" placeholder="Name" required id="name">
           <input type="email" name="email" placeholder="Email Address" required id="email">
@@ -26,7 +27,8 @@
           <input type="password" name="password" placeholder="Confirm password" required id="pass_confirm">
           <button type="submit" class="create">Create Account</button>
         </form>
-        <form id="login-form">
+        <form id="login-form" method="post">
+          {% csrf_token %}
           <h2>Log In</h2>
           <input type="email" name="email" placeholder="Email Address" required id="login-email">
           <input type="password" name="password" placeholder="Password" required id="login-password">

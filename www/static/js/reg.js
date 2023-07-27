@@ -1,7 +1,7 @@
-const signupBtn = document.querySelector('.signup-btn')
-const loginBtn = document.querySelector('.login-btn')
-const signupForm = document.querySelector('#registration-form')
-const loginForm = document.querySelector('#login-form')
+// const signupBtn = document.querySelector('.signup-btn')
+// const loginBtn = document.querySelector('.login-btn')
+// const signupForm = document.querySelector('#registration-form')
+// const loginForm = document.querySelector('#login-form')
 
 signupBtn.addEventListener('click', () => {
   loginForm.classList.add('disabled')

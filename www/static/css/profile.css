@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: #6ED9F7;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+h1 {
+    margin-left: 20px;
+    font-size: 36px;
+    color: #fff;
+}
+img {
+    width: 200px;
+    height: auto;
+    margin: 20px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+.profile-info {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.profile-info div {
+    margin-right: 30px;
+}
+h2 {
+    font-size: 24px;
+    color: #6ED9F7;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+ul {
+    list-style: none;
+    margin-left: 50px;
+    padding: 0;
+}
+li {
+    margin-bottom: 10px;
+}
+.settings {
+    margin-left: 50px;
+    margin-top: 50px;
+}
