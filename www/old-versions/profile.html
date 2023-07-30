@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title> Профиль пользователя </title> 
+    <link id="favicon" rel="icon" type="image/x-icon" href="https://cloudblesk.site/img/CloudFavicon.png">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <script src="{% static 'js/profile.js' %}" defer="defer"></script>
+</head> 
+<body> 
+    <header>
+        <h1>Профиль пользователя</h1>
+        <img src="https://www.1and1.com/digitalguide/fileadmin/DigitalGuide/Teaser/cloud-speicher-t.jpg" alt="Cloud Storage">
+    </header>
+    <div class="profile-info">
+        <div>
+            <h3>Личная информация</h3>
+            <p><strong>Имя:</strong> Иван Иванов</p>
+            <p><strong>Email:</strong> ivan.ivanov@cloudstorage.com</p>
+            <p><strong>Телефон:</strong> +7(123)456-78-90</p>
+        </div>
+        <div>
+            <h3>Сводка по использованию хранилища</h3>
+            <p><strong>Общая память:</strong> 10 ГБ</p>
+            <p><strong>Использовано:</strong> 2 ГБ</p>
+            <p><strong>Свободно:</strong> 8 ГБ</p>
+        </div>
+    </div>
+    <h2>Сохраненные файлы</h2>
+    <ul>
+        <li>Файл1.docx</li>
+        <li>Файл2.pdf</li>
+        <li>Файл3.jpg</li>
+    </ul>
+    <div class="settings">
+        <h2>Настройки профиля</h2>
+        <ul>
+            <li><a href="#">Сменить пароль</a></li>
+            <li><a href="#">Сменить электронную почту</a></li>
+        </ul>
+    </div>
+</body> 
+</html> 
