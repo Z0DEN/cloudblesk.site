@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cloud Storage</title>
+    <link id="favicon" rel="icon" type="image/x-icon" href="https://cloudblesk.site/img/CloudFavicon.png">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reg.css' %}">
+    <script src="{% static 'js/reg.js' %}" defer="defer"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cloud">
+      <div class="star"></div>
+    </div>
+      <div class="form-div">
+        <form id="login-form" method="post" action="https://cloudblesk.site/MainProfile">
+          {% csrf_token %}
+          <h2>Log In</h2>
+          <input type="email" name="email" placeholder="Email Address" required id="login-email">
+          <input type="password" name="password" placeholder="Password" required id="login-password">
+          <button type="submit" class="create">Log In</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
