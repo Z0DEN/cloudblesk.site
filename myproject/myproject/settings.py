@@ -89,11 +89,10 @@ DATABASES = {
         'NAME': 'django_project',
         'PASSWORD': 'djangoisme',
         'USER': 'django_user',
-        'HOST': 'localhost',
+        'HOST': '/var/run/postgresql',
         'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -130,8 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-
+STATICFILES_DIRS = [
+       os.path.join(BASE_DIR, "static"),
+   ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
