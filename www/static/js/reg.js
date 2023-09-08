@@ -1,7 +1,7 @@
-// const signupBtn = document.querySelector('.signup-btn')
-// const loginBtn = document.querySelector('.login-btn')
-// const signupForm = document.querySelector('#registration-form')
-// const loginForm = document.querySelector('#login-form')
+const signupBtn = document.querySelector('.signup-btn')
+const loginBtn = document.querySelector('.login-btn')
+const signupForm = document.querySelector('#registration-form')
+const loginForm = document.querySelector('#login-form')
 
 signupBtn.addEventListener('click', () => {
   loginForm.classList.add('disabled')
@@ -18,19 +18,19 @@ loginBtn.addEventListener('click', () => {
 })
 
 
-const registrationForm = document.querySelector('#registration-form');
-const confirmationOverlay = document.querySelector('.confirmation-overlay');
-const closePanelButton = document.querySelector('.close-panel');
+// const registrationForm = document.querySelector('#registration-form');
+// const confirmationOverlay = document.querySelector('.confirmation-overlay');
+// const closePanelButton = document.querySelector('.close-panel');
 
-registrationForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  confirmationOverlay.style.display = 'flex'; 
-  DataGathering()
-});
+// registrationForm.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   confirmationOverlay.style.display = 'flex'; 
+//   DataGathering()
+// });
 
-closePanelButton.addEventListener('click', () => {
-  confirmationOverlay.style.display = 'none';
-});
+// closePanelButton.addEventListener('click', () => {
+//   confirmationOverlay.style.display = 'none';
+// });
 
 
 function DataGathering(){
