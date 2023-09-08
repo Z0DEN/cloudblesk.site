@@ -16,6 +16,8 @@ import os
 
 ALLOWED_HOSTS = ['localhost','192.168.0.98','176.197.34.213','cloudblesk.site','127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = ['https://cloudblesk.site']
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
